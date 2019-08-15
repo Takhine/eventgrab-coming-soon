@@ -1,0 +1,311 @@
+/*HEADER*/ 
+.header-construction-page{
+    margin-top: 60px;
+    background-color: #f0f0f0;
+}
+.header-construction-wrapper{
+    background: url('../../images/construction-bg.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center bottom;
+}
+#soon{
+    font-weight: 800;
+    opacity: 0.6;
+    font-size: 2rem;
+    color: #707070;
+    text-transform: uppercase;
+    text-align: right;
+    padding:20px 40px 0 0;
+}
+.header-image{
+    text-align: center;
+}
+.header-message{
+    text-align: right;
+    padding:0 40px 0 0;
+    font-size: 4rem;
+    font-weight: 500;
+}
+.header-image{
+    width: 100%;
+}
+.header-image img{
+    width: inherit;
+    padding: 100px 100px 0 100px;
+}
+.header-question-wrapper{
+    background-color: #c5cfd6;
+}
+.header-question{
+    text-align: center;
+    padding:100px 50px 100px 50px;
+    font-size: 4rem;
+    font-weight: 500;
+}
+@media(max-width:815px){
+.header-construction-page{
+    margin-top:150px
+}
+.header-message, .header-question{
+    font-size: 3.5rem;
+}
+.header-question{
+    padding:200px 50px 200px 50px;
+
+}
+.header-image img{
+   padding: 40px 40px 0 40px; 
+}
+}
+
+@media(max-width:425px){
+    #mobile-call{
+        display: none;
+    }
+    #soon{
+        padding:15px 15px 0 0;
+    }
+    .header-message{
+        font-size: 1.6rem;
+        padding:0 15px 0 0;
+    }
+    .header-question{
+        padding:100px 20px 100px 20px;
+        font-size: 2rem;
+    }
+    .header-image img{
+    padding: 20px 20px 0 20px;
+    }
+}
+/*HEADER END*/ 
+/*ABOUT*/
+.about-construction-wrapper{
+    background: url('../../images/about-bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+.about-construction-wrapper .ant-card-meta-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.about-construction-wrapper .service-description{
+    padding-top: 10px;
+    font-size: 1.2rem;
+}
+.about-message-wrapper{
+    width: 70%;
+}
+.about-construction-wrapper .about-message-wrapper .about-message{
+    padding: 200px 200px 200px 100px;
+    color: #fff;
+    font-family: Quicksand;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: left;
+}
+.about-construction-wrapper .ant-col .ant-card{
+    margin-bottom: 20px
+}
+.about-construction-wrapper .about-services-wrapper{
+    background-color: #f0f0f0;
+    padding: 30px;
+}
+.about-construction-wrapper .anticon svg{
+    font-size: 30px;
+    color: #252525;
+}
+@media(min-width:992px)and(max-width:1233px){
+.about-construction-wrapper .ant-card-meta-title{
+    font-size: 1.05rem;
+}    
+.about-construction-wrapper .service-description{
+    font-size: 0.9rem;
+}
+}
+@media(max-width:928px){
+    .about-message-wrapper{
+        width: 100%;
+    }
+    .about-construction-wrapper .about-message-wrapper .about-message{
+        padding: 200px 100px 200px 100px;
+        color: #fff;
+        font-family: Quicksand;
+        font-size: 4rem;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+@media(max-width:840px){
+.about-construction-wrapper .ant-card-meta-title{
+    font-size: 1.2rem;
+}
+.about-construction-wrapper .service-description{
+    font-size: 1rem;
+}
+}
+@media(max-width:815px){
+    .about-message-wrapper{
+        width: 100%;
+    }
+    .about-construction-wrapper .about-message-wrapper .about-message{
+        padding: 100px 50px;
+        color: #fff;
+        font-family: Quicksand;
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+@media(max-width:425px){
+    .about-message-wrapper{
+        width: 90%;
+    }
+    .about-construction-wrapper .about-message-wrapper .about-message{
+        padding: 100px 20px 100px 20px;
+        color: #fff;
+        font-family: Quicksand;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: left;
+    }
+.about-construction-wrapper .ant-card-meta-title{
+    font-size: 1.05rem;
+}
+.about-construction-wrapper .service-description{
+    font-size: 0.9rem;
+}
+}
+/*ABOUT END*/ 
+/*CAREERS*/ 
+.careers-construction-page{
+    background-color: #252525;
+    border: 1px solid #707070;
+    padding: 40px;
+}
+.careers-heading{
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 600;
+}
+.quote-icon{
+    position: relative;
+    top:-20px;
+    width:auto;
+}
+.profiles-wrapper{
+    position: relative;
+    left: 0;
+    top: -127px;
+    right: 0;
+}
+.profile-box{
+    padding: 30px;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 16px;
+}
+.profile-heading{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.profile-message{
+    padding-right: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #252525;
+    opacity: 0.6;
+    text-align: justify;
+}
+.profile-button-wrapper{
+    text-align: right;
+    
+}
+.profile-button{
+    border-radius: 11px;
+    background: #00bcd4;
+    height: 45px;
+    padding: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    width: 200px;
+}
+.careers-construction-page .MuiTypography-body1.careers-message{
+    color: #707070;
+    line-height: 1.2;
+    text-align: justify;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+@media(max-width:928px)and(min-width:768px){
+    .profile-message, .careers-construction-page .MuiTypography-body1.careers-message{
+        font-size: 1.4rem;
+    }
+
+}
+@media(max-width:767px){
+    .profiles-wrapper{
+        position: relative;
+        top: 0;
+    }
+    .careers-construction-page{
+        height: 100%;
+    }
+}
+@media(max-width:815px){
+    .careers-heading{
+        font-size: 2rem;
+    }
+    .profile-heading{
+        font-size: 1.6rem;
+    }
+}
+@media(max-width:425px){
+    .profile-message, .careers-construction-page .MuiTypography-body1.careers-message{
+        font-size: 1.2rem;
+    }
+    .careers-construction-page{
+        padding: 15px;
+    }
+    .careers-heading{
+        font-size: 1.6rem;
+    }
+    .profile-heading{
+        font-size: 1.2rem;
+    }
+}
+/*CAREERS END*/
+
+/*FOOTER*/ 
+.footer-construction-page{
+    background-color: #252525;
+    padding:40px;
+}
+.footer-heading{
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 600;
+}
+.footer-message{
+    font-size: 1rem;
+    color:#fff;
+    font-weight: 300;
+}
+.social-icon{
+    padding:30px 20px 30px 0;
+
+}
+@media(max-width:815px){
+    .footer-heading{
+        font-size: 2rem;
+    }
+}
+@media(max-width:425px){
+    .footer-heading{
+        font-size: 1.6rem;
+    }
+}
+/*FOOTER END*/ 

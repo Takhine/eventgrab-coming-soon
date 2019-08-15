@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.5" height="21.375" viewBox="0 0 22.5 21.375">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:#fff}
+        </style>
+        <clipPath id="clip-path">
+            <path d="M0 0h22.5v21.375H0z" class="cls-1"/>
+        </clipPath>
+    </defs>
+    <g id="round-equipment" class="cls-2">
+        <path id="Path_23" d="M22.25 6.5h-4.5V4.25A2.242 2.242 0 0 0 15.5 2H11a2.242 2.242 0 0 0-2.25 2.25V6.5h-4.5a2.233 2.233 0 0 0-2.239 2.25L2 21.125a2.242 2.242 0 0 0 2.25 2.25h18a2.242 2.242 0 0 0 2.25-2.25V8.75a2.242 2.242 0 0 0-2.25-2.25zm-6.75 0H11V4.25h4.5z" class="cls-3" data-name="Path 23" transform="translate(-2 -2)"/>
+    </g>
+</svg>
