@@ -2,8 +2,8 @@ import React from 'react';
 import { Row, Col, Button } from 'antd';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import quote from 'static/images/icons/careers-quote.svg';
-
+import quote from '../../../static/images/icons/careers-quote.svg';
+import Link from '@material-ui/core/Link'
 export default function Careers(){
     return(
         <div  className="careers-construction-page">
@@ -37,7 +37,9 @@ export default function Careers(){
                         the platform to absolutely anyone!
                         </p>
                         <div className="profile-button-wrapper">
-                        <Button target="_blank" href="https://forms.gle/ri4XTyWtkiWYdEaT7" icon="user" className="profile-button">Apply Now</Button>
+                        <Link target="_blank" href="https://forms.gle/ri4XTyWtkiWYdEaT7">
+                        <Button icon="user" className="profile-button">Apply Now</Button>
+                        </Link>
                         </div>
                         </div>
                     </Box>
@@ -51,7 +53,9 @@ export default function Careers(){
                         apply now!
                         </p>
                         <div className="profile-button-wrapper">
-                        <Button target="_blank" href="https://forms.gle/2b12XjZ9ujLeEtJPA" icon="user" className="profile-button">Apply Now</Button>
+                        <Link target="_blank" href="https://forms.gle/2b12XjZ9ujLeEtJPA">
+                        <Button icon="user" className="profile-button">Apply Now</Button>
+                        </Link>
                         </div>
                     </div>
                     </Box>
@@ -65,7 +69,9 @@ export default function Careers(){
                         portfolio to fit the bill!
                         </p>
                         <div className="profile-button-wrapper">
-                        <Button target="_blank" href="https://forms.gle/g3opRLW7igbLuKZYA" icon="user" className="profile-button">Apply Now</Button>
+                        <Link target="_blank" href="https://forms.gle/g3opRLW7igbLuKZYA">
+                        <Button icon="user" className="profile-button">Apply Now</Button>
+                        </Link>
                         </div>
                         </div>
                     </Box>

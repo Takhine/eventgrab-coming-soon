@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
-import cycle from 'static/images/construction-cycle.svg';
+import cycle from '../../../static/images/construction-cycle.svg';
 export default function Header(){
     return(
         <div className="header-construction-page">
@@ -8,7 +8,7 @@ export default function Header(){
             <div className="header-construction-wrapper">
             <h2 className="header-message">New website is on a Roll!</h2>
             <Box className="header-image">
-                <img src={cycle}/>
+                <img src={cycle} alt="People Cycling" />
             </Box>
             </div>
             <Box className="header-question-wrapper">

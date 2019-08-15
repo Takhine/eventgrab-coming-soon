@@ -8,13 +8,12 @@ import {
 } from "react-router-dom";
 
 /** PAGES IMPORT */
-import Construction from 'pages/construction';
-import ScrollToTop from 'components/ScrollToTop';
+import Construction from './pages/construction';
+import ScrollToTop from './components/ScrollToTop';
 
 /* Global, cards, item page */
 
 const App = () => (
-  <Provider store={store}>
     <React.Fragment>
       <Router>
       <ScrollToTop>
@@ -26,7 +25,6 @@ const App = () => (
         </ScrollToTop>
       </Router>
     </React.Fragment>
-  </Provider>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

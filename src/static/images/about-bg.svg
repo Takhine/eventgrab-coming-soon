@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="774.115" viewBox="0 0 1280 774.115">
+    <defs>
+        <style>
+            .cls-1{fill:url(#linear-gradient)}.cls-2{fill:url(#linear-gradient-2)}.cls-3{clip-path:url(#clip-path)}.cls-4{fill:url(#linear-gradient-3)}.cls-5{fill:url(#linear-gradient-4)}.cls-6{fill:url(#linear-gradient-5)}.cls-7{fill:url(#linear-gradient-6)}.cls-8{fill:url(#linear-gradient-7)}.cls-9{fill:url(#linear-gradient-8)}.cls-10{fill:url(#linear-gradient-9)}.cls-11{fill:url(#linear-gradient-10)}
+        </style>
+        <linearGradient id="linear-gradient" x2="1" y1=".5" y2=".5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#1c1c1c"/>
+            <stop offset=".604" stop-color="#333"/>
+            <stop offset="1" stop-color="#464646"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x2="1" xlink:href="#linear-gradient"/>
+        <clipPath id="clip-path">
+            <path id="Rectangle_121" d="M0 0h1280v774.115H0z" class="cls-1" data-name="Rectangle 121"/>
+        </clipPath>
+        <linearGradient id="linear-gradient-3" x1=".364" x2=".691" y1=".165" y2=".848" xlink:href="#linear-gradient"/>
+        <linearGradient id="linear-gradient-4" x1=".564" x2=".884" y1=".986" y2="1.515" xlink:href="#linear-gradient"/>
+        <linearGradient id="linear-gradient-5" x1=".343" x2=".683" y1=".414" y2=".829" xlink:href="#linear-gradient"/>
+        <linearGradient id="linear-gradient-6" x1="-.017" x2=".154" y1=".786" y2="1.408" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#12acc7"/>
+            <stop offset=".201" stop-color="#46ad9a"/>
+            <stop offset=".595" stop-color="#a8af48"/>
+            <stop offset=".87" stop-color="#e6b014"/>
+            <stop offset="1" stop-color="#ffb100"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-7" x1="-.726" x2="-.561" y1=".662" y2="1.335" xlink:href="#linear-gradient-6"/>
+        <linearGradient id="linear-gradient-8" x1=".473" x2=".1" y1=".514" y2=".978" xlink:href="#linear-gradient"/>
+        <linearGradient id="linear-gradient-9" x1=".499" x2=".329" y1=".051" y2="-.423" xlink:href="#linear-gradient-6"/>
+        <linearGradient id="linear-gradient-10" x1=".467" x2=".281" y1=".393" y2="-.166" xlink:href="#linear-gradient-6"/>
+    </defs>
+    <g id="Group_279" data-name="Group 279" transform="translate(-156.146)">
+        <g id="Group_278" data-name="Group 278" transform="translate(156.146)">
+            <path id="Rectangle_120" d="M0 0h1280v774.115H0z" class="cls-2" data-name="Rectangle 120"/>
+            <g id="Group_277" class="cls-3" data-name="Group 277">
+                <path id="Path_315" d="M136.788 156.114c67.749-126.9 166.925-149.206 287.318-144.5 103.016 4.028 214.688 35.052 309.281-7.492 94.3-42.414 159.065-119.957 261.247-114.166 137 7.766 197.228 128.42 190.174 246.032-9.778 163.068-137.254 244.59-264.654 234.173-105.427-8.618-217.077-20.306-310.391 54.144-85.947 68.57-142.778 219.8-263.11 223.046-136.472 3.686-335.172-256.526-209.865-491.237z" class="cls-4" data-name="Path 315" transform="translate(-217.647 -81.925)"/>
+                <g id="Group_276" data-name="Group 276" transform="translate(-350.735 -239.997)">
+                    <path id="Path_316" d="M-3.032 320.305C34.875 186.03 122.663 141.429 235.51 116.83c96.56-21.047 206.5-19.083 286.025-81.4 79.285-62.124 124.165-149.795 220.3-169 128.89-25.754 208.715 71.911 225.394 182.94 23.13 153.942-79.264 260.4-199.753 281.383-99.707 17.362-205.808 33.367-277.843 125.033-66.347 84.428-89.3 238.686-200.516 270.665C162.981 762.719-73.143 568.648-3.032 320.305z" class="cls-5" data-name="Path 316" transform="translate(15.782 137.737)"/>
+                    <path id="Path_317" d="M1205.141 552.7c-62.72 83.771-180.473 58.706-270.658 94.4C830.58 688.218 747.331 757.663 643.8 812.352c-100.5 53.086-269.287-35.784-152.709-220.875C537 518.583 580.6 466.2 611.079 379.465c33.927-96.557 56.114-183.587 142.568-228.319 218.319-112.959 623.316 172.06 451.494 401.554z" class="cls-6" data-name="Path 317" transform="translate(501.839 333.257)"/>
+                    <path id="Path_318" d="M156.374 525.591c-116.59 9.092-133.123 116.92 9.058 111.878 97.014-3.441 201.885-47.516 297.718-61.255 88.267-12.655 103.31 46.026 166.444 68.537C764.467 692.838 780.2 397.6 648.1 371.014c-92.539-18.625-196.65 77.21-274.785 116.544-83.361 41.966-138.57 31.921-216.941 38.033z" class="cls-7" data-name="Path 318" transform="translate(98.593 513.684)"/>
+                    <path id="Path_319" d="M689.5 98.989c121.6.861 127.382-96.142-21.561-102.7C566.314-8.193 460.8 23.756 361.522 28.759c-91.441 4.609-113.571-50.069-182.37-75.546-146.976-54.425-131.748 213.494 10 248.1 99.3 24.242 198.448-54.953 276.364-84.678C548.639 84.917 607.763 98.409 689.5 98.989z" class="cls-8" data-name="Path 319" transform="translate(110.896 199.863)"/>
+                    <path id="Path_320" d="M557.595 129.273C608.224 63.118 701.86 84.209 774 56.624 857.115 24.846 923.99-29.7 1006.912-72.3c80.492-41.346 214.3 31.071 119.96 177.45-37.152 57.648-72.3 98.975-97.261 167.8-27.787 76.616-46.145 145.756-115.383 180.578-174.842 87.94-495.333-143.018-356.633-324.255z" class="cls-9" data-name="Path 320" transform="translate(576.844 177.769)"/>
+                    <path id="Path_321" d="M1196.623 276.479c64.729-28.264 105.364-6.7 172.411-40.644 145.979-73.91 192.809-224.438 70.223-206.817-62.349 8.96-134.069 41.39-193 42.7-59.8 1.328-79.809-39.053-127.294-53.388C1031.7-8.008 900.414 48.321 825.845-2.457c-171.977-117.1-322.278-17.456-290.376 124.946 26.687 119.152 246.8 23.049 286.084 173.014 63.893 243.936 234.27 42.454 375.07-19.024z" class="cls-10" data-name="Path 321" transform="translate(584.61 199.864)"/>
+                    <path id="Path_322" d="M1244.411 506.875c41.1-35.882 88.806-35.7 128.78-75.567 87.035-86.8 44.323-187.9-53.522-140.689-49.768 24.011-94.693 64.412-145.72 82.976-51.779 18.834-91.841 1.551-141.529 7.614-91.306 11.145-175.232 83.347-269.005 76.541-216.259-15.692-292.757 87.278-185.426 159.9 89.807 60.769 229.59-61.246 347.619 13.519C1117.59 752.791 1155 584.925 1244.411 506.875z" class="cls-11" data-name="Path 322" transform="translate(583.221 446.826)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

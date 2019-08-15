@@ -1,10 +1,9 @@
 import React from 'react';
-import { Row, Col, Button } from 'antd';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import facebook from 'static/images/icons/facebook.svg';
-import instagram from 'static/images/icons/instagram.svg';
-import linkedin from 'static/images/icons/linkedin.svg';
+import facebook from '../../../static/images/icons/facebook.svg';
+import instagram from '../../../static/images/icons/instagram.svg';
+import linkedin from '../../../static/images/icons/linkedin.svg';
 import Link from '@material-ui/core/Link';
 
 export default function Footer(){

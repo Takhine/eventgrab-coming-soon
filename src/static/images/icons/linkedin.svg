@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27.232" height="27.233" viewBox="0 0 27.232 27.233">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="linkedin-logo-button">
+        <ellipse id="Ellipse_73" cx="12.066" cy="12.341" data-name="Ellipse 73" rx="12.066" ry="12.341" transform="translate(2.194 1.097)"/>
+        <g id="Group_61" data-name="Group 61">
+            <g id="Group_60" data-name="Group 60">
+                <path id="Path_293" d="M25.915 21.3a2.176 2.176 0 0 0-1.977 1.09v-.935h-2.195c.029.619 0 6.6 0 6.6h2.195v-3.69a1.479 1.479 0 0 1 .072-.536 1.2 1.2 0 0 1 1.127-.8c.794 0 1.112.606 1.112 1.494v3.533h2.2v-3.787c-.006-2.027-1.09-2.969-2.534-2.969zm-1.979 1.113h-.014a.165.165 0 0 0 .014-.022z" class="cls-1" data-name="Path 293" transform="translate(-9.818 -9.617)"/>
+                <path id="Rectangle_27" d="M0 0h2.195v6.604H0z" class="cls-1" data-name="Rectangle 27" transform="translate(8.514 11.837)"/>
+                <path id="Path_294" d="M13.616 0a13.616 13.616 0 1 0 13.617 13.616A13.632 13.632 0 0 0 13.616 0zm7.221 19.775a1.06 1.06 0 0 1-1.074 1.048H7.377A1.061 1.061 0 0 1 6.3 19.775V7.246A1.061 1.061 0 0 1 7.377 6.2h12.385a1.062 1.062 0 0 1 1.074 1.048z" class="cls-1" data-name="Path 294"/>
+                <path id="Path_295" d="M16.529 15.777a1.144 1.144 0 1 0-.029 2.282h.014a1.144 1.144 0 1 0 .015-2.282z" class="cls-1" data-name="Path 295" transform="translate(-6.903 -7.124)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,22 +1,20 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {NavLink} from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll'
 
 // media assets
-import logo from 'static/images/logo.png';
+import logo from '../../static/images/logo.png';
 import MobileBar from './MobileBar';
-import careers from 'static/images/icons/careers-icon.svg';
-import about from 'static/images/icons/about-icon.svg';
+import careers from '../../static/images/icons/careers-icon.svg';
+import about from '../../static/images/icons/about-icon.svg';
 
 // styles
-import 'static/css/Navbar.scss';
+import '../../static/css/Navbar.scss';
  class Navbar extends React.Component {
   componentDidMount() {
  
@@ -49,7 +47,7 @@ import 'static/css/Navbar.scss';
         <Toolbar>      
           <Link to="logo" onClick={this.scrollToTop}>
             <Button>
-              <img src={logo} width={130}/>
+              <img src={logo} alt="Logo" width={130}/>
             </Button>
           </Link>
           

@@ -1,14 +1,13 @@
 import React from 'react';
-import 'static/css/Navbar.scss';
-import { makeStyles } from '@material-ui/core/styles';
+import '../../static/css/Navbar.scss';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 
 import { Icon } from 'antd';
-import careers from 'static/images/icons/careers-icon.svg';
-import about from 'static/images/icons/about-icon.svg';
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import careers from '../../static/images/icons/careers-icon.svg';
+import about from '../../static/images/icons/about-icon.svg';
+import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 
 export default class FilterBar extends React.Component{
   componentDidMount() {

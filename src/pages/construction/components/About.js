@@ -1,8 +1,8 @@
 import React from 'react';
-import { Row, Col, Button } from 'antd';
+import { Row, Col } from 'antd';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { Card, Avatar, Icon } from 'antd';
+import { Card, Icon } from 'antd';
 
 const { Meta } = Card;
 
