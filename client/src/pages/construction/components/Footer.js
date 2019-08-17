@@ -9,7 +9,7 @@ import Link from '@material-ui/core/Link';
 export default function Footer(){
     return(
         <div className="footer-construction-page">
-            <Box>
+            <Box style={{paddingRight:'20px'}}>
             <h3 className="footer-heading">Contact Us</h3>
             <Link href="tel:8104142534">
             <Typography className="footer-message">
@@ -22,7 +22,7 @@ export default function Footer(){
             </Typography>
             </Link>
             </Box>
-            <Box style={{margin:'0'}}>
+            <Box style={{margin:'0',padding:'40px'}}>
                 <Link href="https://www.facebook.com/eventgrabofficial/" target="_blank">
                 <img className="social-icon" width="60" src={facebook} alt="Facebook Icon"/>                
                 </Link>

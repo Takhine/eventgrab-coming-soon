@@ -7,6 +7,12 @@
   border-radius: 7px;
   background-color: #fff;
 }
+
+@media(max-width:815px){
+  .header-bar{
+align-self: center;
+  }
+}
 @media(max-width:930px) and (min-width:815px){
   .search{
     max-width: 200px;

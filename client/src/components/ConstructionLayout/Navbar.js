@@ -3,7 +3,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 
 import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll'
 
@@ -44,7 +43,7 @@ import '../../static/css/Navbar.scss';
   return (
     <div className="grow">
       <AppBar position="fixed" id="navbar-root">
-        <Toolbar>      
+        <Toolbar className="header-bar">      
           <Link to="logo" onClick={this.scrollToTop}>
             <Button>
               <img src={logo} alt="Logo" width={130}/>
@@ -54,7 +53,31 @@ import '../../static/css/Navbar.scss';
           <div className="grow" />
           <div className="section-desktop">
           <Link className="navbar-item-wrapper" activeClass="active" to="careers" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
-          <IconButton
+          <Button
+            color="inherit"
+            aria-label="Open drawer"
+            edge="start"
+        >
+            <img src={careers} alt="Menu" width="18"/>
+            <Typography className="navbar-item">
+              College Package
+            </Typography>
+        </Button> 
+          </Link>
+          <Link className="navbar-item-wrapper" activeClass="active" to="partners" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+          <Button
+            color="inherit"
+            aria-label="Open drawer"
+            edge="start"
+        >
+            <img src={careers} alt="Menu" width="18"/>
+            <Typography className="navbar-item">
+              Partners
+            </Typography>
+        </Button> 
+          </Link>
+          <Link className="navbar-item-wrapper" activeClass="active" to="careers" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+          <Button
             color="inherit"
             aria-label="Open drawer"
             edge="start"
@@ -63,10 +86,10 @@ import '../../static/css/Navbar.scss';
             <Typography className="navbar-item">
               Careers
             </Typography>
-        </IconButton> 
+        </Button> 
           </Link>
           <Link className="navbar-item-wrapper" activeClass="active" to="about" spy={true} smooth={true} duration={500} onSetActive={this.handleSetActive}>
-          <IconButton
+          <Button
             color="inherit"
             aria-label="Open drawer"
             edge="start"
@@ -75,7 +98,7 @@ import '../../static/css/Navbar.scss';
             <Typography className="navbar-item">
               About us
             </Typography>
-        </IconButton> 
+        </Button> 
           </Link>
           </div>
         </Toolbar>

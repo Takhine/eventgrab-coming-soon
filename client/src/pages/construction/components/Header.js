@@ -12,7 +12,10 @@ export default function Header(){
             </Box>
             </div>
             <Box className="header-question-wrapper">
-            <h1 className="header-question">Want to join us on the ride?</h1>
+            <h1 className="header-question">Help us, Help you!</h1>
+            <p className="header-answer">Increase your business drastically and grab the 
+            leads on the cities humblest and trending 
+            events!</p>
             </Box>
         </div>
     )

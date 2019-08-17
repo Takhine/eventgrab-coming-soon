@@ -3,8 +3,6 @@ import '../../static/css/Navbar.scss';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-
-import { Icon } from 'antd';
 import careers from '../../static/images/icons/careers-icon.svg';
 import about from '../../static/images/icons/about-icon.svg';
 import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
@@ -37,19 +35,32 @@ export default class FilterBar extends React.Component{
   render(){
     return(
         <div className="grow" id="mobilebar">
-          <Toolbar>  
+          <Toolbar>     
+          <div className="grow" />
+          <Link to="careers" className="navbar-item-wrapper" offset={-400} activeClass="active" spy={true} smooth={true} duration={500} onSetActive={this.handleSetActive}>
           <IconButton
             color="inherit"
             aria-label="Open drawer"
             edge="start"
-            id="mobile-call"
         >
-            <Icon type="phone" /> 
+            <img src={careers} alt="Menu" width="18"/>
             <Typography className="navbar-item">
-              <small>8104142534</small>
+              College Package
             </Typography>
-        </IconButton>    
-          <div className="grow" />
+        </IconButton> 
+          </Link>
+          <Link to="partners" className="navbar-item-wrapper" offset={-100} activeClass="active" spy={true} smooth={true} duration={500} onSetActive={this.handleSetActive}>
+          <IconButton
+            color="inherit"
+            aria-label="Open drawer"
+            edge="start"
+        >
+            <img src={careers} alt="Menu" width="18"/>
+            <Typography className="navbar-item">
+              Partners
+            </Typography>
+        </IconButton> 
+          </Link>
           <Link to="careers" className="navbar-item-wrapper" offset={-400} activeClass="active" spy={true} smooth={true} duration={500} onSetActive={this.handleSetActive}>
           <IconButton
             color="inherit"
