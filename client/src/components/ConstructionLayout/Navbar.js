@@ -3,7 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-
+import {NavLink} from 'react-router-dom';
 import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll'
 
 // media assets
@@ -52,7 +52,7 @@ import '../../static/css/Navbar.scss';
           
           <div className="grow" />
           <div className="section-desktop">
-          <Link className="navbar-item-wrapper" activeClass="active" to="careers" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+          <NavLink className="navbar-item-wrapper" exact to="/college-package">
           <Button
             color="inherit"
             aria-label="Open drawer"
@@ -63,7 +63,7 @@ import '../../static/css/Navbar.scss';
               College Package
             </Typography>
         </Button> 
-          </Link>
+          </NavLink>
           <Link className="navbar-item-wrapper" activeClass="active" to="partners" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
           <Button
             color="inherit"

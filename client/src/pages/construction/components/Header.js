@@ -4,7 +4,7 @@ import cycle from '../../../static/images/construction-cycle.svg';
 export default function Header(){
     return(
         <div className="header-construction-page">
-            <h3 id="soon">Coming Soon</h3>
+            <h3 id="soon">Event Season</h3>
             <div className="header-construction-wrapper">
             <h2 className="header-message">New website is on a Roll!</h2>
             <Box className="header-image">
