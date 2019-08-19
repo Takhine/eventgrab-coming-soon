@@ -6,7 +6,7 @@ import quote from '../../../static/images/icons/careers-quote.svg';
 import Link from '@material-ui/core/Link'
 export default function Careers(){
     return(
-        <div  className="careers-construction-page">
+        <div id="careers" className="careers-construction-page">
             <Row gutter={24}>
                 <Col xs={24} md={12}>
                     <h3 className="careers-heading">Careers</h3>

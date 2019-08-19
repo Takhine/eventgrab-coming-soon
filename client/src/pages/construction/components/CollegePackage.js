@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import { Card, Row, Col, Button, Tooltip, Tabs} from 'antd';
+import { HashLink as Link } from 'react-router-hash-link';
 import PackageLayout from '../../../components/PackageLayout';
 const { TabPane } = Tabs;
 const { Meta } = Card;
@@ -120,6 +121,9 @@ export default function CollegePackage  (){
                                 <Box className="package-small-wrapper">
                                     <div className="package-small">
                                     <h1 style={{ marginBottom: '20px' }}>College Package</h1>
+									<Link to="/#partners">
+										Test
+									</Link>
                                     <p>In this era of festivities, colleges around Mumbai are leading the country in some of the best events, fests and workshops ever hosted. If you think you have 
                                     a desire to make your college event incredible book this package and let us help you become an incredible host!</p>
                                     <div className="button-row">

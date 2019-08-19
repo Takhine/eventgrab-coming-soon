@@ -88,7 +88,7 @@ import '../../static/css/Navbar.scss';
             </Typography>
         </Button> 
           </Link>
-          <Link className="navbar-item-wrapper" activeClass="active" to="about" spy={true} smooth={true} duration={500} onSetActive={this.handleSetActive}>
+          <NavLink className="navbar-item-wrapper" to="/about-us">
           <Button
             color="inherit"
             aria-label="Open drawer"
@@ -99,7 +99,7 @@ import '../../static/css/Navbar.scss';
               About us
             </Typography>
         </Button> 
-          </Link>
+          </NavLink>
           </div>
         </Toolbar>
         <MobileBar/>

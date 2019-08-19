@@ -15,7 +15,6 @@ export default class Construction extends Component{
 				<Header/>
                 <Partners/>
 					<Careers/>
-                    <About/>
 				<Footer/>
 			</ConstructionLayout>
         );

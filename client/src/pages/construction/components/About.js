@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import PackageLayout from '../../../components/PackageLayout';
 import { Card, Icon } from 'antd';
 
 const { Meta } = Card;
@@ -46,6 +47,7 @@ const servicesData=[
 ]
 export default function About(){
     return(
+        <PackageLayout>
         <div name="about" className="about-construction-page">
             <div className="about-construction-wrapper">
             <Box className="about-message-wrapper">
@@ -75,5 +77,6 @@ export default function About(){
             </Box>
             </div>
         </div>
+        </PackageLayout>
     )
 }

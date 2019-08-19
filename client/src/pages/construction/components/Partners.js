@@ -7,7 +7,7 @@ import performer from '../../../static/images/performer.svg';
 
 export default function Partners(){
     return(
-        <div className="partners-wrapper">
+        <div id="partners" className="partners-wrapper">
             <Row gutter={16} style={{marginBottom:'100px'}}>
                 <Col xs={24} lg={8}>
                     <Box className="partner-box">
