@@ -3,10 +3,12 @@ import { Row, Col, Button } from 'antd';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import quote from '../../../static/images/icons/careers-quote.svg';
-import Link from '@material-ui/core/Link'
+import Link from '@material-ui/core/Link';
+import Fade from 'react-fade-in';
+import Fadein from 'react-reveal/Fade';
 export default function Careers(){
     return(
-        <div id="careers" className="careers-construction-page">
+        <div className="careers-construction-page">
             <Row gutter={24}>
                 <Col xs={24} md={12}>
                     <h3 className="careers-heading">Careers</h3>
@@ -15,6 +17,7 @@ export default function Careers(){
                         <img className="quote-icon" src={quote} alt="Quote Icon"/>
                         </Col>
                         <Col xs={16} lg={20}>
+                        <Fade delay="1500">
                         <Typography className="careers-message">
                         It doesn’t make sense to 
                         hire smart people and 
@@ -23,12 +26,14 @@ export default function Careers(){
                         they can tell us what to 
                         do.
                         </Typography>
+                        </Fade>
                         </Col>
                     </Row>
                 </Col>
-                <Col style={{position:'relative'}} xs={24} md={12}>
+                <Col id="careers" style={{position:'relative'}} xs={24} md={12}>
                     <div name="careers" className="profiles-wrapper">
                     <Box className="profile-box">
+                    <Fadein bottom duration={1500}>
                         <div className="profile">
                         <h4 className="profile-heading">Sales Intern</h4>
                         <p className="profile-message">Build corporate relationships with 
@@ -42,8 +47,10 @@ export default function Careers(){
                         </Link>
                         </div>
                         </div>
+                        </Fadein>
                     </Box>
                     <Box className="profile-box">
+                        <Fadein  bottom duration={1500}>
                     <div className="profile">
                         <h4 className="profile-heading">Marketing Intern</h4>
                         <p className="profile-message">
@@ -58,8 +65,10 @@ export default function Careers(){
                         </Link>
                         </div>
                     </div>
+                    </Fadein>
                     </Box>
                     <Box className="profile-box">
+                        <Fadein bottom duration={1500}>
                     <div className="profile">
                         <h4 className="profile-heading">Social Media Intern</h4>
                         <p className="profile-message">
@@ -74,6 +83,7 @@ export default function Careers(){
                         </Link>
                         </div>
                         </div>
+                        </Fadein>
                     </Box>
                     </div>
                 </Col>

@@ -4,13 +4,15 @@ import Box from '@material-ui/core/Box';
 import vendor from '../../../static/images/vendor.svg';
 import organiser from '../../../static/images/organiser.svg';
 import performer from '../../../static/images/performer.svg';
-
+import Fadein from 'react-reveal/Fade';
 export default function Partners(){
     return(
         <div id="partners" className="partners-wrapper">
             <Row gutter={16} style={{marginBottom:'100px'}}>
                 <Col xs={24} lg={8}>
+                
                     <Box className="partner-box">
+                    <Fadein bottom duration={1500}>
                         <div name="partners" className="text-center">
                             <img style={{padding:'20px'}} src={vendor} alt="Vendor Truck" width="100%"/>
                         </div>
@@ -21,11 +23,15 @@ export default function Partners(){
                         <div className="text-center">
                         <Button className="partner-button">Enquire</Button>
                         </div>
+                </Fadein>
                         
                     </Box>
                 </Col>
+                
                 <Col xs={24} lg={8}>
                 <Box className="partner-box">
+                <Fadein bottom duration={1500}>
+
                         <div className="text-center">
                             <img style={{padding:'20px'}} src={performer} alt="Vendor Truck" width="100%"/>
                         </div>
@@ -36,11 +42,15 @@ export default function Partners(){
                         <div className="text-center">
                         <Button className="partner-button">Enquire</Button>
                         </div>
+                    </Fadein>
                         
                     </Box>
                 </Col>
+                
                 <Col xs={24} lg={8}>
                 <Box className="partner-box">
+                <Fadein bottom duration={1500}>
+
                         <div className="text-center">
                             <img style={{padding:'20px'}} src={organiser} alt="Vendor Truck" width="100%"/>
                         </div>
@@ -51,6 +61,7 @@ export default function Partners(){
                         <div className="text-center">
                         <Button className="partner-button">Enquire</Button>
                         </div>
+                    </Fadein>
                         
                     </Box>
                 </Col>

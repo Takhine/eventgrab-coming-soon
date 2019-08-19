@@ -4,7 +4,8 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import PackageLayout from '../../../components/PackageLayout';
 import { Card, Icon } from 'antd';
-
+import Footer from '../components/Footer';
+import Fadein from 'react-reveal/Fade';
 const { Meta } = Card;
 
 const servicesData=[
@@ -51,11 +52,13 @@ export default function About(){
         <div name="about" className="about-construction-page">
             <div className="about-construction-wrapper">
             <Box className="about-message-wrapper">
-            <Typography className="about-message">
-            Rent Equipment,
-            Book Performers,
-            Hire Organisers.
-            </Typography>
+            <Fadein duration={1000}>
+                <Typography className="about-message">
+                Rent Equipment,
+                Book Performers,
+                Hire Organisers.
+                </Typography>
+            </Fadein>
             </Box>
             <Box className="about-services-wrapper">
                 <Row gutter={16}>
@@ -64,6 +67,7 @@ export default function About(){
                             xs={24} md={12} lg={8}
                             key={service.id} 
                         >
+                        <Fadein duration={1500}>
                     <Card>
                         <Meta
                         avatar={<Icon type={service.src} />}
@@ -71,12 +75,14 @@ export default function About(){
                         />
                         <p className="service-description">{service.description}</p>
                     </Card>
+                    </Fadein>
                     </Col>
                     ))}
                 </Row>
             </Box>
             </div>
         </div>
+        <Footer/>
         </PackageLayout>
     )
 }

@@ -76,7 +76,7 @@ import '../../static/css/Navbar.scss';
             </Typography>
         </Button> 
           </Link>
-          <Link className="navbar-item-wrapper" activeClass="active" to="careers" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+          <Link className="navbar-item-wrapper" activeClass="active" to="careers" spy={true} smooth={true} offset={-400} duration={500} onSetActive={this.handleSetActive}>
           <Button
             color="inherit"
             aria-label="Open drawer"
