@@ -1,16 +1,17 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import { Card, Row, Col, Button, InputNumber, Tabs, Radio, Switch    } from 'antd';
+import { Row, Col, Button, Tabs } from 'antd';
 import '../../../static/css/construction/Package.scss';
 import PackageLayout from '../../../components/PackageLayout';
 import phone from '../../../static/images/icons/phone-icon.svg';
 import service from '../../../static/images/service.svg';
 import delivery from '../../../static/images/delivery.svg';
 import quality from '../../../static/images/quality.svg';
-
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import Header from './Slider.js';
 const { TabPane } = Tabs;
-const { Meta } = Card;
 
 const itemList = [
 	{
@@ -40,27 +41,39 @@ function Items() {
 			{itemList.map(item => (
 				<Col
 					xs={24}
-					sm={12}
-					md={24}
-					lg={8}
 					className="gutter-row"
 					key={item.id}
 				>
-						<Card
-							className="item-card"
-							cover={
-								<img
-									alt={item.title}
-									src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-								/>
-							}
-						>
-							<Meta
-								title={item.title}
-								description={item.price}
-							/>
-							<Radio></Radio>
-						</Card>
+						<Card className="cart-card">
+                      <CardContent className="cart-card-content">
+                        <Grid container spacing={2} item xs={12} className="cart-item-body">
+                        <Grid 
+                          item
+                            xs={4}
+                            lg={3}
+                            style={{paddingLeft:'10px',textAlign:'center',maxWidth:'200px'}}
+                          >
+                            <img
+                              className="cart-item-thumbnail"
+							  alt={item.title}
+							  width="100%"
+                              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                            />
+                        </Grid>
+                        <Grid 
+                          item
+                            xs={8}
+                            lg={9}
+                            style={{paddingRight:'10px'}}
+                          >
+                            <h2>{item.title}</h2>
+                        </Grid>
+                        </Grid>
+                        <div className="cart-item-footer">
+                          <p style={{textAlign:'right'}} className="item-total-price">{item.price}</p>
+                        </div>
+                      </CardContent>
+                  </Card>
 				</Col>
 			))}
 		</Row>
@@ -70,7 +83,6 @@ function Items() {
 function Includes() {
 	return (
 		<div>
-			<p>1 selected</p>
 			<Items />
 		</div>
 	);
@@ -111,28 +123,28 @@ function PackageSummary() {
 			</div>
 			<div style={{marginTop:'40px'}}>
 				<Row>
-					<Col xs={8} sm={6}>
+					<Col style={{textAlign:'center'}} xs={10} sm={6}>
 				<img src={service} alt="Customer Care Person"/>
 					</Col>
-					<Col xs={16} sm={18}>
+					<Col xs={14} sm={18}>
 					<p>Colleges across Mumbai hosting some of the best fests,
 				 workshops and other such event experiences.</p>
 					</Col>
 				</Row>
 				<Row style={{marginTop:'40px'}}>
-					<Col xs={8} sm={6}>
+					<Col style={{textAlign:'center'}} xs={10} sm={6}>
 				<img src={delivery} alt="Delivery Truck"/>
 					</Col>
-					<Col xs={16} sm={18}>
+					<Col xs={14} sm={18}>
 					<p>Colleges across Mumbai hosting some of the best fests,
 				 workshops and other such event experiences.</p>
 					</Col>
 				</Row>
 				<Row style={{marginTop:'40px'}}>
-					<Col xs={8} sm={6}>
+					<Col style={{textAlign:'center'}} xs={10} sm={6}>
 				<img src={quality} alt="5 Star Tool"/>
 					</Col>
-					<Col xs={16} sm={18}>
+					<Col xs={14} sm={18}>
 					<p>Colleges across Mumbai hosting some of the best fests,
 				 workshops and other such event experiences.</p>
 					</Col>
@@ -148,7 +160,8 @@ class CollegePackage extends React.Component {
 				<div className="package-page-wrapper">
 					<div className="package-wrapper">
 						<Row gutter={8} style={{marginRight:'0'}}>
-							<Col xs={24} md={12} lg={14} className="package-details-wrapper">
+							<Col xs={24} md={12} lg={10} className="package-details-wrapper">
+								<Header/>
 							<Box className="package-small-wrapper">
 									<PackageSummary />
 								</Box>
@@ -167,7 +180,7 @@ class CollegePackage extends React.Component {
 
 								</div>
 							</Col>
-							<Col xs={0} md={12} lg={10} className="package-big-wrapper">
+							<Col xs={0} md={12} lg={14} className="package-big-wrapper">
 								<PackageSummary />
 							</Col>
 						</Row>

@@ -53,7 +53,27 @@
     box-shadow: -6px 4px 20px 0 rgba(0,0,0,.05);
     top: 60px;
     right: 0;
-    width: 500px;
+    width: 750px;
+}
+@media(min-width:767px)and (max-width:909px){
+    .package-page-wrapper .package-big-wrapper .package-big{
+        width: 360px;
+        }
+}
+@media(min-width:910px)and (max-width:991px){
+    .package-page-wrapper .package-big-wrapper .package-big{
+        width: 420px;
+        }
+}
+@media(min-width:992px)and (max-width:1056px){
+    .package-page-wrapper .package-big-wrapper .package-big{
+        width: 550px;
+        }
+}
+@media(min-width:1057px)and (max-width:1300px){
+    .package-page-wrapper .package-big-wrapper .package-big{
+        width: 620px;
+        }
 }
 .package-page-wrapper .package-wrapper .cart-details-wrapper{
     background: #fff;
@@ -78,16 +98,7 @@
     right: 0;
     left: 0;
 }
-.cart-details-wrapper .card-button-row{
-    padding: 20px 0;
-}
-.cart-details-wrapper .cart-card{
-    margin-bottom: 10px
-}
-.cart-details-wrapper .card-button-row .card-button{
-    font-size: 1.2rem;
-    height: 40px;
-}
+
 .package-page-wrapper .package-big .package-button-row .package-cancel-button{
     width: 100%;
     height: 50px;
@@ -113,6 +124,47 @@ margin-left: 0;
     color: #707070;
     font-weight: normal;
     font-size: 1.3em;
+}
+// CAROUSEL
+.package-details-wrapper .custom-carousel{
+    position: relative;
+    height: 100%;
+    margin-top: 20px;
+    margin-left: 60px;
+    max-width: 600px;
+}
+.package-details-wrapper .carousel.carousel-slider{
+    border-radius: 7px;
+}
+.package-details-wrapper .custom-carousel .carousel{
+    position: unset;
+}
+.package-details-wrapper .thumbs-wrapper{
+    position: absolute;
+    top:-20px;
+    left:-75px;
+}
+.package-details-wrapper .carousel .thumbs{
+    padding-left: 0;
+    transform: none !important;
+}
+.package-details-wrapper .control-arrow{
+    display: none;
+}
+.package-details-wrapper .thumbs .thumb{
+ margin-bottom: 10px;
+ display: block;
+ width: 40px;
+ border-radius: 7px;
+}
+// CARD
+.package-page-wrapper .item-total-price{
+    color:#00bcd4;
+    font-weight: 600;
+    font-size:1.2rem;
+}
+.package-page-wrapper .MuiPaper-elevation1{
+    box-shadow: none;
 }
 // RADIO
 .package-page-wrapper .ant-card-body{
@@ -146,11 +198,13 @@ margin-left: 0;
 .package-page-wrapper .package-small-wrapper{
     display: none;
 }
+
 @media(max-width:767px){
     .package-wrapper{
     margin: 0 10px 20px 10px;
         
     }
+
 .package-wrapper .package-header{
 font-size: 2rem;
 }
