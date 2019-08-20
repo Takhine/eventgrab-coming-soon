@@ -7,10 +7,11 @@ import performer from '../../../static/images/performer.svg';
 import Fadein from 'react-reveal/Fade';
 export default function Partners(){
     return(
-        <div id="partners" className="partners-wrapper">
+        <div className="partners-wrapper">
             <Row gutter={16} style={{marginBottom:'100px'}}>
                 <Col xs={24} lg={8}>
-                
+            <span id="partners-mobile" style={{position:'absolute',top:'-450px'}}></span>                
+            <span id="partners-section" style={{position:'absolute',top:'-350px'}}></span>                
                     <Box className="partner-box">
                     <Fadein bottom duration={1500}>
                         <div name="partners" className="text-center" style={{maxWidth:'250px',margin:'auto'}}>

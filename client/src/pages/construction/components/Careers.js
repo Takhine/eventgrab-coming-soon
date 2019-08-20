@@ -9,15 +9,16 @@ import Fadein from 'react-reveal/Fade';
 export default function Careers(){
     return(
         <div className="careers-construction-page">
-            <Row gutter={24}>
+            <Row  gutter={24}>
                 <Col xs={24} md={12}>
+                    <span id="careers-mobile" style={{position:'absolute', top:'-130px'}}></span>
                     <h3 className="careers-heading">Careers</h3>
                     <Row gutter={16} className="careers-quote-wrapper">
                         <Col xs={8} lg={4}>
                         <img className="quote-icon" src={quote} alt="Quote Icon"/>
                         </Col>
                         <Col xs={16} lg={20}>
-                        <Fade delay="1500">
+                        <Fade delay="500">
                         <Typography className="careers-message">
                         It doesn’t make sense to 
                         hire smart people and 
@@ -30,12 +31,12 @@ export default function Careers(){
                         </Col>
                     </Row>
                 </Col>
-                <Col id="careers" style={{position:'relative'}} xs={24} md={12}>
+                <Col style={{position:'relative'}} xs={24} md={12}>
                     <div name="careers" className="profiles-wrapper">
                     <Box className="profile-box">
                     <Fadein bottom duration={1500}>
                         <div className="profile">
-                        <h4 className="profile-heading">Sales Intern</h4>
+                        <h4  id="careers" className="profile-heading">Sales Intern</h4>
                         <p className="profile-message">Build corporate relationships with 
                         potential and existing vendors, acquire 
                         new clients and have the ability to sell 

@@ -4,13 +4,16 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import {NavLink} from 'react-router-dom';
-import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll'
+import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 
 // media assets
 import logo from '../../static/images/logo.png';
 import MobileBar from './MobileBar';
 import careers from '../../static/images/icons/careers-icon.svg';
 import about from '../../static/images/icons/about-icon.svg';
+import partners from '../../static/images/icons/partner-icon.svg';
+import packages from '../../static/images/icons/package-icon.svg';
+
 
 // styles
 import '../../static/css/Navbar.scss';
@@ -58,25 +61,25 @@ import '../../static/css/Navbar.scss';
             aria-label="Open drawer"
             edge="start"
         >
-            <img src={careers} alt="Menu" width="18"/>
+            <img src={packages} alt="Menu" width="18"/>
             <Typography className="navbar-item">
               College Package
             </Typography>
         </Button> 
           </NavLink>
-          <Link className="navbar-item-wrapper" activeClass="active" to="partners" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+          <Link className="navbar-item-wrapper" activeClass="active" to="partners" spy={true} smooth={true} offset={-380} duration={500} onSetActive={this.handleSetActive}>
           <Button
             color="inherit"
             aria-label="Open drawer"
             edge="start"
         >
-            <img src={careers} alt="Menu" width="18"/>
+            <img src={partners} alt="Menu" width="18"/>
             <Typography className="navbar-item">
               Partners
             </Typography>
         </Button> 
           </Link>
-          <Link className="navbar-item-wrapper" activeClass="active" to="careers" spy={true} smooth={true} offset={-400} duration={500} onSetActive={this.handleSetActive}>
+          <Link className="navbar-item-wrapper" activeClass="active" to="careers" spy={true} smooth={true} offset={-30} duration={500} onSetActive={this.handleSetActive}>
           <Button
             color="inherit"
             aria-label="Open drawer"

@@ -8,9 +8,11 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 // media assets
 import logo from '../../static/images/logo.png';
-// import MobileBar from './MobileBar';
+import MobilePageBar from './MobilePageBar';
 import careers from '../../static/images/icons/careers-icon.svg';
 import about from '../../static/images/icons/about-icon.svg';
+import partners from '../../static/images/icons/partner-icon.svg';
+import packages from '../../static/images/icons/package-icon.svg';
 
 // styles
 import '../../static/css/Navbar.scss';
@@ -35,19 +37,19 @@ import '../../static/css/Navbar.scss';
             aria-label="Open drawer"
             edge="start"
         >
-            <img src={careers} alt="Menu" width="18"/>
+            <img src={packages} alt="Menu" width="18"/>
             <Typography className="navbar-item">
               College Package
             </Typography>
         </Button> 
           </NavLink>
-          <Link className="navbar-item-wrapper" to="/#partners">
+          <Link className="navbar-item-wrapper" to="/#partners-section">
           <Button
             color="inherit"
             aria-label="Open drawer"
             edge="start"
         >
-            <img src={careers} alt="Menu" width="18"/>
+            <img src={partners} alt="Menu" width="18"/>
             <Typography className="navbar-item">
               Partners
             </Typography>
@@ -79,7 +81,7 @@ import '../../static/css/Navbar.scss';
           </NavLink>
           </div>
         </Toolbar>
-        {/* <MobileBar/> */}
+        <MobilePageBar/>
       </AppBar>
     </div>
   );

@@ -10,33 +10,9 @@ import careers from '../../static/images/icons/careers-icon.svg';
 import about from '../../static/images/icons/about-icon.svg';
 import partners from '../../static/images/icons/partner-icon.svg';
 import packages from '../../static/images/icons/package-icon.svg';
-import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default class FilterBar extends React.Component{
-  componentDidMount() {
- 
-    Events.scrollEvent.register('begin', function(to, element) {
-      console.log("begin", arguments);
-    });
- 
-    Events.scrollEvent.register('end', function(to, element) {
-      console.log("end", arguments);
-    });
- 
-    scrollSpy.update();
- 
-  }
-  scrollToTop
-  () {
-    scroll.scrollToTop();
-  }
-  componentWillUnmount() {
-    Events.scrollEvent.remove('begin');
-    Events.scrollEvent.remove('end');
-  }
-  handleSetActive(to) {
-    console.log(to);
-  }
   render(){
     return(
         <div className="grow" id="mobilebar">
@@ -54,7 +30,7 @@ export default class FilterBar extends React.Component{
             </Typography>
         </IconButton> 
         </NavLink>
-          <Link to="partners" className="mobile-item-wrapper" offset={-500} activeClass="active" spy={true} smooth={true} duration={500} onSetActive={this.handleSetActive}>
+        <Link className="mobile-item-wrapper" to="/#partners-mobile">
           <IconButton
             color="inherit"
             aria-label="Open drawer"
@@ -66,7 +42,7 @@ export default class FilterBar extends React.Component{
             </Typography>
         </IconButton> 
           </Link>
-          <Link to="careers" className="mobile-item-wrapper" offset={-370} activeClass="active" spy={true} smooth={true} duration={500} onSetActive={this.handleSetActive}>
+          <Link className="mobile-item-wrapper" to="/#careers-mobile">
           <IconButton
             color="inherit"
             aria-label="Open drawer"

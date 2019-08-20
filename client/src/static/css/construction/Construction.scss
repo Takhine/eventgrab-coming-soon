@@ -132,6 +132,11 @@
     height: 100%;
     width: 100%;
 }
+@media(max-width:815px){
+.about-construction-wrapper{
+    margin-top: 60px;
+}
+}
 .about-construction-wrapper .scroll-bottom{
     position: absolute;
     right: 20px;
@@ -183,7 +188,7 @@
         width: 100%;
     }
     .about-construction-wrapper .about-message-wrapper .about-message{
-        padding: 200px 100px 200px 100px;
+        padding: 100px 100px 200px 100px;
         color: #fff;
         font-family: Quicksand;
         font-size: 4rem;
