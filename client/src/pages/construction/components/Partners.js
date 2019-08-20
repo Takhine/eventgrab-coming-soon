@@ -13,7 +13,7 @@ export default function Partners(){
                 
                     <Box className="partner-box">
                     <Fadein bottom duration={1500}>
-                        <div name="partners" className="text-center">
+                        <div name="partners" className="text-center" style={{maxWidth:'250px',margin:'auto'}}>
                             <img style={{padding:'20px'}} src={vendor} alt="Vendor Truck" width="100%"/>
                         </div>
                         <h2 className="text-center partner-heading">Vendors</h2>
@@ -32,7 +32,7 @@ export default function Partners(){
                 <Box className="partner-box">
                 <Fadein bottom duration={1500}>
 
-                        <div className="text-center">
+                        <div className="text-center" style={{maxWidth:'250px',margin:'auto'}}>
                             <img style={{padding:'20px'}} src={performer} alt="Vendor Truck" width="100%"/>
                         </div>
                         <h2 className="text-center partner-heading">Performers</h2>
@@ -51,7 +51,7 @@ export default function Partners(){
                 <Box className="partner-box">
                 <Fadein bottom duration={1500}>
 
-                        <div className="text-center">
+                        <div className="text-center" style={{maxWidth:'250px',margin:'auto'}}>
                             <img style={{padding:'20px'}} src={organiser} alt="Vendor Truck" width="100%"/>
                         </div>
                         <h2 className="text-center partner-heading">Organisers</h2>

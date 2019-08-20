@@ -11,6 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Header from './Slider.js';
+import Fade from 'react-fade-in';
 const { TabPane } = Tabs;
 
 const itemList = [
@@ -114,14 +115,21 @@ function Faqs() {
 function PackageSummary() {
 	return (
 		<div className="package-big">
+			<Fade delay={1000}>
 			<h1 className="package-header">College Package</h1>
+			</Fade>
+			<Fade delay={1000}>
 			<p className="package-message">Colleges across Mumbai hosting some of the best fests,
 				 workshops and other such event experiences. To help you make your college event stand out,
 				  book this package now!</p>
+			</Fade>
+			<Fade delay={1000}>
 			<div className="package-button-row">
 				<Button className="package-call-button"><img className="package-call-icon" src={phone} width="18" alt="Phone"/> Book now</Button>
 			</div>
+			</Fade>
 			<div style={{marginTop:'40px'}}>
+				<Fade delay={1000}>
 				<Row>
 					<Col style={{textAlign:'center'}} xs={10} sm={6}>
 				<img src={service} alt="Customer Care Person"/>
@@ -131,6 +139,8 @@ function PackageSummary() {
 				 workshops and other such event experiences.</p>
 					</Col>
 				</Row>
+				</Fade>
+				<Fade delay={1200}>
 				<Row style={{marginTop:'40px'}}>
 					<Col style={{textAlign:'center'}} xs={10} sm={6}>
 				<img src={delivery} alt="Delivery Truck"/>
@@ -140,6 +150,8 @@ function PackageSummary() {
 				 workshops and other such event experiences.</p>
 					</Col>
 				</Row>
+				</Fade>
+				<Fade delay={1400}>
 				<Row style={{marginTop:'40px'}}>
 					<Col style={{textAlign:'center'}} xs={10} sm={6}>
 				<img src={quality} alt="5 Star Tool"/>
@@ -149,6 +161,7 @@ function PackageSummary() {
 				 workshops and other such event experiences.</p>
 					</Col>
 				</Row>
+				</Fade>
 			</div>
 		</div>
 	);
@@ -161,10 +174,13 @@ class CollegePackage extends React.Component {
 					<div className="package-wrapper">
 						<Row gutter={8} style={{marginRight:'0'}}>
 							<Col xs={24} md={12} lg={10} className="package-details-wrapper">
+								<Fade delay={1000}>
 								<Header/>
+								</Fade>
 							<Box className="package-small-wrapper">
 									<PackageSummary />
 								</Box>
+								<Fade delay={1000}>
 								<div className="package-details">
 									<Tabs defaultActiveKey="0">
 										<TabPane tab="Includes" key="0">
@@ -177,8 +193,8 @@ class CollegePackage extends React.Component {
 											<Faqs />
 										</TabPane>
 									</Tabs>
-
 								</div>
+								</Fade>
 							</Col>
 							<Col xs={0} md={12} lg={14} className="package-big-wrapper">
 								<PackageSummary />
