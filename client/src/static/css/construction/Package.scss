@@ -24,7 +24,6 @@
 
 .package-wrapper .package-details-wrapper{
     padding-top: 0;
-    margin-bottom: 60px;
 }
 .package-wrapper .package-details-wrapper .package-details{
     padding:20px;
@@ -213,6 +212,7 @@ font-size: 2rem;
         position: fixed;
         bottom: 0;
         left: 0;
+        text-align: center;
         background-color: #252525;
         right: 0;
         padding: 10px 20px;
@@ -232,6 +232,27 @@ font-size: 2rem;
     }
 }
 // Tabs
+.package-page-wrapper .ant-tabs-card-bar .ant-tabs-nav-scroll{
+    background: #707070;
+}
+.package-page-wrapper .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
+    color: #fff;
+    background: #707070;
+}
+.package-page-wrapper .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+    color: #252525;
+    background: #fff;
+    border-bottom:none;
+}
+.package-page-wrapper .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
+    border-radius: 0;
+    border:none;
+}
+
+
+.package-page-wrapper .ant-tabs-bar{
+    margin:0;
+}
 .package-wrapper .package-details-wrapper .package-details .ant-tabs .ant-tabs-top-content{
     padding: 10px;
 }

@@ -125,7 +125,7 @@ function PackageSummary() {
 			</Fade>
 			<Fade delay={1000}>
 				<div className="package-button-row">
-					<Button className="package-call-button"><img className="package-call-icon" src={phone} width="18" alt="Phone" />Send Quote</Button>
+					<Button className="package-call-button">Send Quote</Button>
 				</div>
 			</Fade>
 			<Fade delay={1000}>
@@ -151,13 +151,15 @@ class CollegePackage extends React.Component {
 		return (
 			<PackageLayout>
 				<div className="package-page-wrapper">
+				<Tabs type="card" defaultActiveKey="0">
+					<TabPane tab="College" key="0">
 					<div className="package-wrapper">
 						<Row gutter={8} style={{ marginRight: '0' }}>
 							<Col xs={24} md={12} lg={10} className="package-details-wrapper">
 								<Fade delay={1000}>
 									<Header />
 								</Fade>
-								<div className="services-container" style={{ marginTop: '40px' }}>
+								{/* <div className="services-container" style={{ marginTop: '40px' }}>
 									<Fade delay={1000}>
 										<Row>
 											<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
@@ -191,7 +193,7 @@ class CollegePackage extends React.Component {
 											</Col>
 										</Row>
 									</Fade>
-								</div>
+								</div> */}
 								<Box className="package-small-wrapper">
 									<PackageSummary />
 								</Box>
@@ -201,6 +203,11 @@ class CollegePackage extends React.Component {
 							</Col>
 						</Row>
 					</div>
+					</TabPane>
+				<TabPane tab="Birthday" key="1">
+					Test
+				</TabPane>
+				</Tabs>
 				</div>
 			</PackageLayout>
 		);
