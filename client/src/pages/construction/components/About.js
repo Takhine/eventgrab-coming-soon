@@ -80,7 +80,7 @@ export default class About extends React.Component{
             <div className="about-construction-wrapper">
             <Box className="about-message-wrapper">
             <Fadein duration={1000}>
-                <Typography className="about-message">
+                <Typography className="about-message" variant="h1">
                 Rent Equipment,
                 Book Performers,
                 Hire Organisers.

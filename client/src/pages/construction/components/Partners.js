@@ -18,9 +18,7 @@ export default function Partners(){
                             <img style={{padding:'20px'}} src={vendor} alt="Vendor Truck" width="100%"/>
                         </div>
                         <h2 className="text-center partner-heading">Vendors</h2>
-                        <p className="text-center partner-message">Join our network of 
-                        hosts, organizers and performers
-                        And a lot more!</p>
+                        <p className="text-center partner-message">Earn a passive income by renting out your equipment, for events or daily use!</p>
                         <div className="text-center">
                         <Button className="partner-button">Enquire</Button>
                         </div>
@@ -37,9 +35,7 @@ export default function Partners(){
                             <img style={{padding:'20px'}} src={performer} alt="Vendor Truck" width="100%"/>
                         </div>
                         <h2 className="text-center partner-heading">Performers</h2>
-                        <p className="text-center partner-message">Join our network of 
-                        hosts, organizers and performers
-                        And a lot more!</p>
+                        <p className="text-center partner-message">Get booked for gigs and performances at events across Mumbai city! </p>
                         <div className="text-center">
                         <Button className="partner-button">Enquire</Button>
                         </div>
@@ -56,9 +52,7 @@ export default function Partners(){
                             <img style={{padding:'20px'}} src={organiser} alt="Vendor Truck" width="100%"/>
                         </div>
                         <h2 className="text-center partner-heading">Organisers</h2>
-                        <p className="text-center partner-message">Join our network of 
-                        hosts, organizers and performers
-                        And a lot more!</p>
+                        <p className="text-center partner-message">Have professional experience organizing events? Call us to collaborate!</p>
                         <div className="text-center">
                         <Button className="partner-button">Enquire</Button>
                         </div>

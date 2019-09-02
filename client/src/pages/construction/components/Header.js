@@ -8,7 +8,7 @@ export default function Header(){
     return(
         <div className="header-construction-page">
             <Fade delay="1000">
-            <h3 id="soon">Event Season</h3>
+            <h1 id="soon">Rent equipment for your event</h1>
             </Fade>
             <div className="header-construction-wrapper">
             <Fade delay="700">
