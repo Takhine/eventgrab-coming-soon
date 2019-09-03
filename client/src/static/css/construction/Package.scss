@@ -24,6 +24,9 @@
 
 .package-wrapper .package-details-wrapper{
     padding-top: 0;
+    background: #fff;
+    height: 100vh;
+    box-shadow: -6px 4px 20px 0 rgba(0,0,0,.05);
 }
 .package-wrapper .package-details-wrapper .package-details{
     padding:20px;
@@ -50,19 +53,26 @@
     opacity: 0.6;
     font-size: 1rem;
 }
+
 .package-page-wrapper .package-big-wrapper .package-big{
-    background: #fff;
+    background: #fafafa;
     height: calc(100% - 60px);
     padding: 20px;
-    position: relative;
-    box-shadow: -6px 4px 20px 0 rgba(0,0,0,.05);
+    position: relative; 
     right: 0;
 }
-// @media(min-width:767px)and (max-width:909px){
-//     .package-page-wrapper .package-big-wrapper .package-big{
-//         width: 360px;
-//         }
-// }
+.header-container{
+    position: fixed;
+    max-width: 40vw;
+}
+@media(min-width:767px) and (max-width:909px){
+    // .package-page-wrapper .package-big-wrapper .package-big{
+    //     width: 360px;
+    //     }
+    .header-container{
+        max-width: 45vw;
+    }
+}
 // @media(min-width:910px)and (max-width:991px){
 //     .package-page-wrapper .package-big-wrapper .package-big{
 //         width: 420px;
@@ -187,11 +197,16 @@ margin-left: 0;
 .package-page-wrapper .package-small-wrapper{
     display: none;
 }
-
 @media(max-width:767px){
     .package-wrapper{
     margin: 0 10px 20px 10px;
-        
+    }
+    .package-wrapper .package-details-wrapper{
+        height: 100%;
+    }
+    .header-container{
+        position: relative;
+        max-width: 100%;
     }
 
 .package-wrapper .package-header{
@@ -234,6 +249,10 @@ font-size: 2rem;
 // Tabs
 .package-page-wrapper .ant-tabs-card-bar .ant-tabs-nav-scroll{
     background: #707070;
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    left: 0;
 }
 .package-page-wrapper .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
     color: #fff;

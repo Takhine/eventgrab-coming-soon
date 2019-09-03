@@ -5,7 +5,7 @@ import img from '../../../static/images/about-bg.svg';
 
 export default function HeaderImages(){
     return(
-<Carousel className="custom-carousel" showArrows={false} showStatus={false} showIndicators={false} axis="vertical">
+<Carousel className="custom-carousel" showArrows={false} showStatus={false} emulateTouch={true} showIndicators={false} axis="vertical">
 <div>
 <img src={img} alt="test" />
 </div>

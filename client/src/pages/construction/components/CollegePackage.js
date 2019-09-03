@@ -157,7 +157,9 @@ class CollegePackage extends React.Component {
 						<Row gutter={8} style={{ marginRight: '0' }}>
 							<Col xs={24} md={12} lg={10} className="package-details-wrapper">
 								<Fade delay={1000}>
+									<div className="header-container">
 									<Header />
+									</div>
 								</Fade>
 								{/* <div className="services-container" style={{ marginTop: '40px' }}>
 									<Fade delay={1000}>
