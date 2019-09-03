@@ -82,7 +82,9 @@ export default class About extends React.Component{
             <Fadein duration={1000}>
                 <Typography className="about-message" variant="h1">
                 Rent Equipment,
+                <br/>
                 Book Performers,
+                <br/>
                 Hire Organisers.
                 </Typography>
             </Fadein>

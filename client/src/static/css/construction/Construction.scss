@@ -127,14 +127,26 @@
 /*ABOUT*/
 .about-construction-wrapper{
     background: url('../../images/about-bg.svg');
+    background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    margin-top:60px;
+}
+.about-message-wrapper{
+    height: 100vh;
+    position: relative;
 }
 @media(max-width:815px){
 .about-construction-wrapper{
     margin-top: 60px;
+}
+.about-message-wrapper{
+    height: 100%;
+}
+.about-construction-wrapper .scroll-bottom{
+    display: none;
 }
 }
 .about-construction-wrapper .scroll-bottom{
@@ -153,15 +165,13 @@
     padding-top: 10px;
     font-size: 1.2rem;
 }
-.about-message-wrapper{
-    width: 70%;
-}
 .about-construction-wrapper .about-message-wrapper .about-message{
-    padding: 200px 200px 200px 100px;
+    padding: 120px 200px 200px 100px;
     color: #fff;
     font-family: Quicksand;
     font-size: 4rem;
     font-weight: bold;
+    line-height: inherit;
     text-align: left;
 }
 .about-construction-wrapper .ant-col .ant-card{
@@ -184,9 +194,6 @@
 }
 }
 @media(max-width:928px){
-    .about-message-wrapper{
-        width: 100%;
-    }
     .about-construction-wrapper .about-message-wrapper .about-message{
         padding: 100px 100px 200px 100px;
         color: #fff;
@@ -205,22 +212,16 @@
 }
 }
 @media(max-width:815px){
-    .about-message-wrapper{
-        width: 100%;
-    }
     .about-construction-wrapper .about-message-wrapper .about-message{
         padding: 100px 50px;
         color: #fff;
         font-family: Quicksand;
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: bold;
         text-align: left;
     }
 }
 @media(max-width:425px){
-    .about-message-wrapper{
-        width: 90%;
-    }
     .about-construction-wrapper .about-message-wrapper .about-message{
         padding: 100px 20px 100px 20px;
         color: #fff;

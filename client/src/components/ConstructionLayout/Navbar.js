@@ -63,7 +63,7 @@ import '../../static/css/Navbar.scss';
         >
             <img src={packages} alt="Menu" width="18"/>
             <Typography className="navbar-item">
-              College Package
+              Packages
             </Typography>
         </Button> 
           </NavLink>
