@@ -5,6 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import {NavLink} from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Drawer from '@material-ui/core/Drawer';
 
 // media assets
 import logo from '../../static/images/logo.png';
@@ -17,13 +20,45 @@ import packages from '../../static/images/icons/package-icon.svg';
 // styles
 import '../../static/css/Navbar.scss';
  class PageHeader extends React.Component {
-  
+  constructor(){
+    super();
+    this.state=
+     {
+       top:false,
+     };
+  }
    render(){
+    const toggleDrawer = (side, open) => event => {
+      if (event.type === 'keydown') {
+        return;
+      }
+      this.setState({ [side]:open });
+    };
+    const fullList = side => (
+      <div
+        role="presentation"
+        onClick={toggleDrawer('top', false)}
+        onKeyDown={toggleDrawer('top', false)}
+      >
+        <MobilePageBar toggleDrawer={toggleDrawer('top',false)}/>
+      </div>
+    );
   return (
     <div className="grow">
       <AppBar position="fixed" id="navbar-root">
-        <Toolbar className="header-bar">      
-          <NavLink to="/">
+        <Toolbar className="header-bar">
+        <IconButton 
+          onClick={toggleDrawer('top', true)} 
+          id="menu-icon" 
+          edge="start" 
+          color="inherit" 
+          aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Drawer anchor="top" open={this.state.top} onClose={toggleDrawer('top', false)}>
+        {fullList('top')}
+          </Drawer>       
+          <NavLink id="logo-link" to="/">
             <Button>
               <img src={logo} alt="Logo" width={130}/>
             </Button>
@@ -81,7 +116,6 @@ import '../../static/css/Navbar.scss';
           </NavLink>
           </div>
         </Toolbar>
-        <MobilePageBar/>
       </AppBar>
     </div>
   );

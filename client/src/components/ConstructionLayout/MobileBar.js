@@ -47,6 +47,7 @@ export default class FilterBar extends React.Component{
             color="inherit"
             aria-label="Open drawer"
             edge="start"
+            onClick={this.props.toggleDrawer}
         >
             <img src={packages} alt="Menu" width="15"/>
             <Typography className="mobile-item">
@@ -54,11 +55,12 @@ export default class FilterBar extends React.Component{
             </Typography>
         </IconButton> 
         </NavLink>
-          <Link to="partners" className="mobile-item-wrapper" offset={-500} activeClass="active" spy={true} smooth={true} duration={500} onSetActive={this.handleSetActive}>
+          <Link to="partners" className="mobile-item-wrapper" offset={-530} activeClass="active" spy={true} smooth={true} duration={500} onSetActive={this.handleSetActive}>
           <IconButton
             color="inherit"
             aria-label="Open drawer"
             edge="start"
+            onClick={this.props.toggleDrawer}
         >
             <img src={partners} alt="Menu" width="15"/>
             <Typography className="mobile-item">
@@ -71,6 +73,7 @@ export default class FilterBar extends React.Component{
             color="inherit"
             aria-label="Open drawer"
             edge="start"
+            onClick={this.props.toggleDrawer}
         >
             <img src={careers} alt="Menu" width="15"/>
             <Typography className="mobile-item">
@@ -83,6 +86,7 @@ export default class FilterBar extends React.Component{
             color="inherit"
             aria-label="Open drawer"
             edge="start"
+            onClick={this.props.toggleDrawer}
         >
             <img src={about} alt="Menu" width="15"/>
             <Typography className="mobile-item">

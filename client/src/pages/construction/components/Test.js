@@ -11,7 +11,6 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Header from './Slider.js';
 import Fade from 'react-fade-in';
-import { OmitProps } from 'antd/lib/transfer/renderListBody';
 const { TabPane } = Tabs;
 
 const itemList1 = [

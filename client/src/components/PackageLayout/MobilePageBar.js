@@ -23,6 +23,7 @@ export default class FilterBar extends React.Component{
             color="inherit"
             aria-label="Open drawer"
             edge="start"
+            onClick={this.props.toggleDrawer}
         >
             <img src={packages} alt="Menu" width="15"/>
             <Typography className="mobile-item">
@@ -35,6 +36,7 @@ export default class FilterBar extends React.Component{
             color="inherit"
             aria-label="Open drawer"
             edge="start"
+            onClick={this.props.toggleDrawer}
         >
             <img src={partners} alt="Menu" width="15"/>
             <Typography className="mobile-item">
@@ -47,6 +49,7 @@ export default class FilterBar extends React.Component{
             color="inherit"
             aria-label="Open drawer"
             edge="start"
+            onClick={this.props.toggleDrawer}
         >
             <img src={careers} alt="Menu" width="15"/>
             <Typography className="mobile-item">
@@ -59,6 +62,7 @@ export default class FilterBar extends React.Component{
             color="inherit"
             aria-label="Open drawer"
             edge="start"
+            onClick={this.props.toggleDrawer}
         >
             <img src={about} alt="Menu" width="15"/>
             <Typography className="mobile-item">
