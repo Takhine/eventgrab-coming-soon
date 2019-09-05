@@ -2,10 +2,9 @@ import React from 'react';
 import { Row, Col, Button, Tabs } from 'antd';
 import '../../../static/css/construction/Package.scss';
 import PackageLayout from '../../../components/PackageLayout';
-// import phone from '../../../static/images/icons/phone-icon.svg';
-// import service from '../../../static/images/service.svg';
-// import delivery from '../../../static/images/delivery.svg';
-// import quality from '../../../static/images/quality.svg';
+import service from '../../../static/images/service.svg';
+import delivery from '../../../static/images/delivery.svg';
+import quality from '../../../static/images/quality.svg';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
@@ -17,42 +16,58 @@ const { TabPane } = Tabs;
 const itemList = [
 	{
 		id: 1,
-		title: 'Chair',
-		price: '12 INR | unit',
+		title: 'Chairs',
 	},
 	{
 		id: 2,
-		title: 'Smoke Machine',
-		price: '500 INR | unit',
+		title: 'Collar Mic',
 	},
 	{
 		id: 3,
 		title: 'Table',
-		price: '200 INR | unit',
 	},
 	{
 		id: 4,
-		title: 'PS4',
-		price: '650 INR | unit',
-	}
+		title: 'Parcan Lights',
+	},
+	{
+		id: 5,
+		title: 'Tables',
+	},
+	{
+		id: 6,
+		title: 'Halogen Lights',
+	},
+	{
+		id: 7,
+		title: 'Speaker Tops',
+	},
+	{
+		id: 8,
+		title: 'Tent Stalls',
+	},
+	{
+		id: 9,
+		title: 'Sound Truss',
+	},
 ];
 function Items() {
 	return (
-		<Row gutter={8}>
+		<Row gutter={8} style={{ marginTop: '10px' }}>
 			{itemList.map(item => (
 				<Col
 					xs={24}
+					sm={12}
+					lg={8}
 					className="gutter-row"
 					key={item.id}
 				>
 					<Card className="cart-card">
 						<CardContent className="cart-card-content">
-							<Grid container spacing={2} item xs={12} className="cart-item-body">
+							<Grid container item xs={12} className="cart-item-body">
 								<Grid
 									item
-									xs={4}
-									lg={3}
-									style={{ paddingLeft: '10px', textAlign: 'center', maxWidth: '200px' }}
+									style={{ width: '100%' }}
 								>
 									<img
 										className="cart-item-thumbnail"
@@ -63,16 +78,12 @@ function Items() {
 								</Grid>
 								<Grid
 									item
-									xs={8}
-									lg={9}
-									style={{ paddingRight: '10px' }}
+									xs={12}
+									style={{ paddingRight: '10px', textAlign: 'center' }}
 								>
-									<h2>{item.title}</h2>
+									<h2 style={{ fontSize: '1.2rem' }}>{item.title}</h2>
 								</Grid>
 							</Grid>
-							<div className="cart-item-footer">
-								<p style={{ textAlign: 'right' }} className="item-total-price">{item.price}</p>
-							</div>
 						</CardContent>
 					</Card>
 				</Col>
@@ -88,27 +99,55 @@ function Includes() {
 		</div>
 	);
 }
-function Offers() {
-	return (
-		<div style={{ marginLeft: '20px' }}>
-			<h2>Offers</h2>
-		</div>
-	)
-}
-function Faqs() {
+// function Offers() {
+// 	return (
+// 		<div style={{ marginLeft: '20px' }}>
+// 			<ol>
+// 				<li>Tap into our network of performers and organizers!</li>
+// 				<li>Need to get in touch with food brands? We're partnered with some of the best ones!</li>
+// 				<li>Incredible offers in store for some of our premium customers :)</li>
+// 			</ol>
+// 		</div>
+// 	)
+// }
+function Services() {
 	return (
 		<div style={{ marginLeft: '30px' }}>
-			<h2>The Process</h2>
-			<h3>Question 1</h3>
-			<p>Answer</p>
-			<h3>Question 2</h3>
-			<p>Answer</p>
-			<h3>Question 3</h3>
-			<p>Answer</p>
-			<h3>Question 4</h3>
-			<p>Answer</p>
-			<h3>Question 5</h3>
-			<p>Answer</p>
+			<div className="services-container" style={{ marginTop: '40px' }}>
+				<Fade delay={1000}>
+					<Row>
+						<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
+							<img src={service} alt="Customer Care Person" />
+						</Col>
+						<Col xs={14} sm={18}>
+							<p>Colleges across Mumbai hosting some of the best fests,
+				 workshops and other such event experiences.</p>
+						</Col>
+					</Row>
+				</Fade>
+				<Fade delay={1200}>
+					<Row style={{ marginTop: '40px' }}>
+						<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
+							<img src={delivery} alt="Delivery Truck" />
+						</Col>
+						<Col xs={14} sm={18}>
+							<p>Colleges across Mumbai hosting some of the best fests,
+				 workshops and other such event experiences.</p>
+						</Col>
+					</Row>
+				</Fade>
+				<Fade delay={1400}>
+					<Row style={{ marginTop: '40px' }}>
+						<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
+							<img src={quality} alt="5 Star Tool" />
+						</Col>
+						<Col xs={14} sm={18}>
+							<p>Colleges across Mumbai hosting some of the best fests,
+				 workshops and other such event experiences.</p>
+						</Col>
+					</Row>
+				</Fade>
+			</div>
 		</div>
 	)
 }
@@ -134,11 +173,8 @@ function PackageSummary() {
 						<TabPane tab="Includes" key="0">
 							<Includes />
 						</TabPane>
-						<TabPane tab="Offers" key="1">
-							<Offers />
-						</TabPane>
-						<TabPane tab="FAQs" key="2">
-							<Faqs />
+						<TabPane tab="Services" key="1">
+							<Services />
 						</TabPane>
 					</Tabs>
 				</div>
@@ -151,65 +187,32 @@ class CollegePackage extends React.Component {
 		return (
 			<PackageLayout>
 				<div className="package-page-wrapper">
-				<Tabs type="card" defaultActiveKey="0">
-					<TabPane tab="College" key="0">
-					<div className="package-wrapper">
-						<Row gutter={8} style={{ marginRight: '0' }}>
-							<Col xs={24} md={12} lg={10} className="package-details-wrapper">
-								<Fade delay={1000}>
-									<div className="header-container">
-									<Header />
-									</div>
-								</Fade>
-								{/* <div className="services-container" style={{ marginTop: '40px' }}>
-									<Fade delay={1000}>
-										<Row>
-											<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
-												<img src={service} alt="Customer Care Person" />
-											</Col>
-											<Col xs={14} sm={18}>
-												<p>Colleges across Mumbai hosting some of the best fests,
-				 workshops and other such event experiences.</p>
-											</Col>
-										</Row>
-									</Fade>
-									<Fade delay={1200}>
-										<Row style={{ marginTop: '40px' }}>
-											<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
-												<img src={delivery} alt="Delivery Truck" />
-											</Col>
-											<Col xs={14} sm={18}>
-												<p>Colleges across Mumbai hosting some of the best fests,
-				 workshops and other such event experiences.</p>
-											</Col>
-										</Row>
-									</Fade>
-									<Fade delay={1400}>
-										<Row style={{ marginTop: '40px' }}>
-											<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
-												<img src={quality} alt="5 Star Tool" />
-											</Col>
-											<Col xs={14} sm={18}>
-												<p>Colleges across Mumbai hosting some of the best fests,
-				 workshops and other such event experiences.</p>
-											</Col>
-										</Row>
-									</Fade>
-								</div> */}
-								<Box className="package-small-wrapper">
-									<PackageSummary />
-								</Box>
-							</Col>
-							<Col xs={0} md={12} lg={14} className="package-big-wrapper">
-								<PackageSummary />
-							</Col>
-						</Row>
-					</div>
-					</TabPane>
-				<TabPane tab="Birthday" key="1">
-					Test
+					<Tabs type="card" defaultActiveKey="0">
+						<TabPane tab="College Fests" key="0">
+							<div className="package-wrapper">
+								<Row gutter={8} style={{ marginRight: '0' }}>
+									<Col xs={24} md={12} lg={10} className="package-details-wrapper">
+										<div>
+										<Fade delay={1000}>
+											<div className="header-container">
+												<Header />
+											</div>
+										</Fade>
+										<Box className="package-small-wrapper">
+											<PackageSummary />
+										</Box>
+										</div>
+									</Col>
+									<Col xs={0} md={12} lg={14} className="package-big-wrapper">
+										<PackageSummary />
+									</Col>
+								</Row>
+							</div>
+						</TabPane>
+						<TabPane tab="Birthday" key="1">
+							Test
 				</TabPane>
-				</Tabs>
+					</Tabs>
 				</div>
 			</PackageLayout>
 		);

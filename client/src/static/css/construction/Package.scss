@@ -13,7 +13,7 @@
 }
 .package-wrapper{
     margin: 0;
-    background-color: #fafafa;
+    background-color: #fff;
 }
 .package-page-wrapper .ant-row{
     margin-right: 0;
@@ -24,9 +24,7 @@
 
 .package-wrapper .package-details-wrapper{
     padding-top: 0;
-    background: #fff;
-    height: 100vh;
-    box-shadow: -6px 4px 20px 0 rgba(0,0,0,.05);
+    // box-shadow: -6px 4px 20px 0 rgba(0,0,0,.05);
 }
 .package-wrapper .package-details-wrapper .package-details{
     padding:20px;
@@ -35,7 +33,7 @@
     background-color: #fafafa;
 }
 .package-page-wrapper .package-small-wrapper{
-    background: #fff;
+    background: #fafafa;
     margin-top: 20px;
     padding: 20px;
 }
