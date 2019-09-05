@@ -10,7 +10,7 @@ import {
 /** PAGES IMPORT */
 import Construction from './pages/construction';
 import ScrollToTop from './components/ScrollToTop';
-import CollegePackage from './pages/construction/components/CollegePackage';
+import CollegePackage from './pages/construction/components/Test';
 import About from './pages/construction/components/About';
 
 /* Global, cards, item page */
