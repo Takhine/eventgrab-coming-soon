@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Button, Tabs } from 'antd';
+import { Row, Col, Tabs, Button, Modal, Form, Input } from 'antd';
 import '../../../static/css/construction/Package.scss';
 import PackageLayout from '../../../components/PackageLayout';
 import service from '../../../static/images/service.svg';
@@ -11,7 +11,46 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Header from './Slider.js';
 import Fade from 'react-fade-in';
+
 const { TabPane } = Tabs;
+const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
+	// eslint-disable-next-line
+	class extends React.Component {
+		render() {
+			const { visible, onCancel, onCreate, form, title } = this.props;
+			const { getFieldDecorator } = form;
+			return (
+				<Modal
+					visible={visible}
+					title={title}
+					okText="Submit"
+					onCancel={onCancel}
+					onOk={onCreate}
+				>
+					<Form layout="vertical">
+						<Form.Item label="Email">
+							{getFieldDecorator('email', {
+								rules: [
+									{
+										type: 'email',
+										message: 'The input is not valid E-mail!',
+									},
+									{ required: true, message: 'Please input your email ID' }],
+							})(<Input type="email" placeholder="info@eventgrab.com" />)}
+						</Form.Item>
+						<Form.Item label="Contact Number">
+							{getFieldDecorator('number', {
+								rules: [
+									{ required: true, message: 'Please enter a phone number' }],
+							})(<Input addonBefore="+91" placeholder="8104142534" />
+							)}
+						</Form.Item>
+					</Form>
+				</Modal>
+			);
+		}
+	},
+);
 
 const itemList1 = [
 	{
@@ -109,7 +148,7 @@ function Items(props) {
 function Includes(props) {
 	return (
 		<div>
-			<Items itemList={props.itemList}/>
+			<Items itemList={props.itemList} />
 		</div>
 	);
 }
@@ -165,14 +204,14 @@ function PackageSummary(props) {
 			</Fade>
 			<Fade delay={1000}>
 				<div className="package-button-row">
-					<Button className="package-call-button">Send Quote</Button>
+					<Button className="package-call-button" onClick={props.showModal}>Send Quote</Button>
 				</div>
 			</Fade>
 			<Fade delay={1000}>
 				<div className="package-details">
 					<Tabs defaultActiveKey="0">
 						<TabPane tab="Includes" key="0">
-							<Includes itemList={props.itemList}/>
+							<Includes itemList={props.itemList} />
 						</TabPane>
 						<TabPane tab="Services" key="1">
 							<Services />
@@ -183,48 +222,91 @@ function PackageSummary(props) {
 		</div>
 	);
 }
-function PackageType(props){
-	return(
+function PackageType(props) {
+	return (
 		<div className="package-wrapper">
-								<Row gutter={8} style={{ marginRight: '0' }}>
-									<Col xs={24} md={12} lg={10} className="package-details-wrapper">
-										<div>
-										<Fade delay={1000}>
-											<div className="header-container">
-												<Header imageLink={props.imageLink}/>
-											</div>
-										</Fade>
-										<Box className="package-small-wrapper">
-											<PackageSummary title={props.title} desc={props.desc} itemList={props.itemList}/>
-										</Box>
-										</div>
-									</Col>
-									<Col xs={0} md={12} lg={14} className="package-big-wrapper">
-										<PackageSummary title={props.title} desc={props.desc} itemList={props.itemList}/>
-									</Col>
-								</Row>
+			<Row gutter={8} style={{ marginRight: '0' }}>
+				<Col xs={24} md={12} lg={10} className="package-details-wrapper">
+					<div>
+						<Fade delay={1000}>
+							<div className="header-container">
+								<Header imageLink={props.imageLink} />
 							</div>
+						</Fade>
+						<Box className="package-small-wrapper">
+							<PackageSummary showModal={props.showModal} title={props.title} desc={props.desc} itemList={props.itemList} />
+						</Box>
+					</div>
+				</Col>
+				<Col xs={0} md={12} lg={14} className="package-big-wrapper">
+					<PackageSummary showModal={props.showModal} title={props.title} desc={props.desc} itemList={props.itemList} />
+				</Col>
+			</Row>
+		</div>
 	);
 }
 class Packages extends React.Component {
+	state = {
+		visible: false,
+	};
+
+	showModal = () => {
+		this.setState({ visible: true });
+	};
+
+	handleCancel = () => {
+		this.setState({ visible: false });
+	};
+
+	handleCreate = () => {
+		const { form } = this.formRef.props;
+		form.validateFields((err, values) => {
+			if (err) {
+				return;
+			}
+
+			console.log('Received values of form: ', values);
+			form.resetFields();
+			this.setState({ visible: false });
+		});
+	};
+
+	saveFormRef = formRef => {
+		this.formRef = formRef;
+	};
 	render() {
-        const collegeTitle="College Fest";
-        const birthdayTitle="Birthday Party";
-        const collegeDesc="Colleges across Mumbai hosting some of the best fests, workshops and other such event experiences. To help you make your college event stand out,book this package now!";
-        const birthdayDesc="Birthday party timeeee";
-        const imageLink1="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80";
-        const imageLink2="https://images.unsplash.com/photo-1480497490787-505ec076689f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80";
-        return (
+		const collegeTitle = "College Fest";
+		const birthdayTitle = "Birthday Party";
+		const collegeDesc = "Colleges across Mumbai hosting some of the best fests, workshops and other such event experiences. To help you make your college event stand out,book this package now!";
+		const birthdayDesc = "Birthday party timeeee";
+		const imageLink1 = "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80";
+		const imageLink2 = "https://images.unsplash.com/photo-1480497490787-505ec076689f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80";
+		return (
 			<PackageLayout>
 				<div className="package-page-wrapper">
 					<Tabs type="card" defaultActiveKey="0">
 						<TabPane tab="College Fests" key="0">
-							<PackageType title={collegeTitle} desc={collegeDesc} imageLink={imageLink1} itemList={itemList1}/>
+							<PackageType showModal={this.showModal} title={collegeTitle} desc={collegeDesc} imageLink={imageLink1} itemList={itemList1} />
+							<CollectionCreateForm
+								wrappedComponentRef={this.saveFormRef}
+								visible={this.state.visible}
+								onCancel={this.handleCancel}
+								onCreate={this.handleCreate}
+								title={collegeTitle}
+							/>
 						</TabPane>
 						<TabPane tab="Birthday" key="1">
-							<PackageType title={birthdayTitle} desc={birthdayDesc} imageLink={imageLink2} itemList={itemList2}/>
+							<PackageType showModal={this.showModal} title={birthdayTitle} desc={birthdayDesc} imageLink={imageLink2} itemList={itemList2} />
+							<CollectionCreateForm
+								wrappedComponentRef={this.saveFormRef}
+								visible={this.state.visible}
+								onCancel={this.handleCancel}
+								onCreate={this.handleCreate}
+								title={birthdayTitle}
+							/>
 						</TabPane>
 					</Tabs>
+
 				</div>
 			</PackageLayout>
 		);
