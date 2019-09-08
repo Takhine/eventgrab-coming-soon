@@ -16,9 +16,16 @@ exports.addOrder = async (req,res) => {
             return res.status(400).json(errors); 
         }
 
-        const order = await Order.create(req.body).catch((error) => {throw error}); 
+        if (!isEmpty(req.body._id)) {
+            const order = await Order.findByIdAndUpdate(req.body._id,req.body,{ new: true }).catch((error) =>{throw error}); 
+
+            if(order) return res.json({success: true}); 
+        }
         
-        if(order) await res.json({success: true}); 
+        const order = await Order.create(req.body).catch((error) => {throw error}); 
+
+        if(order) return res.json({success: true}); 
+
 
     }catch(err){
         console.log(err); 
