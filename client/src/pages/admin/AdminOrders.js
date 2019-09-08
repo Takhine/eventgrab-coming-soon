@@ -28,7 +28,7 @@ export default function AdminOrders() {
     return (
         <AdminLayout>
             <MaterialTable
-                title="Editable Example"
+                title="View Orders"
                 columns={state.columns}
                 data={state.data}
                 editable={{

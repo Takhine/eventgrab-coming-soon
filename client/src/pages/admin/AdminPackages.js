@@ -28,7 +28,7 @@ export default function AdminPackages() {
     return (
         <AdminLayout>
             <MaterialTable
-                title="Editable Example"
+                title="View Packages"
                 columns={state.columns}
                 data={state.data}
                 editable={{

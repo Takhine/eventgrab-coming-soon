@@ -28,7 +28,7 @@ export default function AdminEquipment() {
     return (
         <AdminLayout>
             <MaterialTable
-                title="Editable Example"
+                title="View Equipments"
                 columns={state.columns}
                 data={state.data}
                 editable={{

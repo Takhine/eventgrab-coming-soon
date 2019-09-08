@@ -12,7 +12,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import Devices from '@material-ui/icons/Devices'
+import Devices from '@material-ui/icons/Devices'; 
+import {withRouter} from 'react-router-dom'; 
 
 const drawerWidth = 240;
 
@@ -39,7 +40,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function AdminLayout(props) {
+function AdminLayout(props) {
   const classes = useStyles();
 
   return (
@@ -63,18 +64,18 @@ export default function AdminLayout(props) {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-            <ListItem button key={'Package'}>
+            <ListItem button key={'Packages'} onClick={() => props.history.push('/admin-packages') }>
               <ListItemIcon><MailIcon/></ListItemIcon>
               <ListItemText primary={'Packages'} />
             </ListItem>
 
-            <ListItem button key={'Equipment'}>
+            <ListItem button key={'Equipments'} onClick={() => props.history.push('/admin-equipments') }>
             <ListItemIcon><Devices/></ListItemIcon>
               <ListItemText primary={'Equipment'} />
             </ListItem>
 
 
-            <ListItem button key={'Orders'}>
+            <ListItem button key={'Orders'} onClick={() => props.history.push('/admin-orders') }>
             <ListItemIcon><InboxIcon/></ListItemIcon>
               <ListItemText primary={'Orders'} />
             </ListItem>
@@ -89,3 +90,5 @@ export default function AdminLayout(props) {
     </div>
   );
 }
+
+export default withRouter(AdminLayout); 
