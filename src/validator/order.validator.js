@@ -15,8 +15,8 @@ exports.validateOrderInput = (data) => {
         errors.email = 'Email field is required'; 
     }
 
-    if(Validator.isEmpty(data.phone)){
-        errors.phone = 'Phone field is required'; 
+    if(Validator.isEmpty(data.contact_number)){
+        errors.contact_number = 'Phone field is required'; 
     }
 
     return {

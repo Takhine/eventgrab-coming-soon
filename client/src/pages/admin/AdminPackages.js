@@ -96,19 +96,19 @@ export default function AdminPackage() {
     return (
         <AdminLayout>
             <MaterialTable
-                title="View Equipments"
+                title="View Packages"
                 columns={state.columns}
                 data={state.data}
                 actions={[
                     {
                         icon: 'add',
-                        tooltip: 'Add Category',
+                        tooltip: 'Add Packages',
                         isFreeAction: true,
                         onClick: (event) =>handleClickOpen({name: '', description: '', slide1: '', slide2: '', slide3: ''})
                     },
                     {
                         icon: 'edit',
-                        tooltip: 'Edit Category',
+                        tooltip: 'Edit Package',
                         onClick: (event, rowData) => handleClickOpen(rowData)
                     }
                 ]}

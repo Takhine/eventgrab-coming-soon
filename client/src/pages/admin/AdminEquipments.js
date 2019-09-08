@@ -116,13 +116,13 @@ export default function AdminEquipment() {
                 actions={[
                     {
                         icon: 'add',
-                        tooltip: 'Add Category',
+                        tooltip: 'Add Equipment',
                         isFreeAction: true,
                         onClick: (event) =>handleClickOpen({name: '', description: '', package: '', thumbnail: ''})
                     },
                     {
                         icon: 'edit',
-                        tooltip: 'Edit Category',
+                        tooltip: 'Edit Equipment',
                         onClick: (event, rowData) => handleClickOpen(rowData)
                     }
                 ]}
