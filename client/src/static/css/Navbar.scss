@@ -48,10 +48,14 @@
   position: fixed;
   width: 100%;
   background: grey;
+  height: 200px;
 }
 .mobile-item-wrapper{
   padding: 7px;
+  text-align: center;
+  display: block;
 }
+
 .mobile-item-wrapper .mobile-item{
   font-size: 0.8rem;
   color: #fff;

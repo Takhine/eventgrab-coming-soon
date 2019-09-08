@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../static/css/Navbar.scss';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import {NavLink} from 'react-router-dom';
@@ -16,7 +15,6 @@ export default class FilterBar extends React.Component{
   render(){
     return(
         <div className="grow" id="mobilebar">
-          <Toolbar style={{paddingLeft:'0'}}>     
           <div className="grow" />
           <NavLink className="mobile-item-wrapper" exact to="/college-package">
           <IconButton
@@ -70,7 +68,6 @@ export default class FilterBar extends React.Component{
             </Typography>
         </IconButton> 
           </NavLink>
-        </Toolbar>
           </div>
     )
 }

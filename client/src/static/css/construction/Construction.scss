@@ -16,17 +16,28 @@
     font-size: 2rem;
     color: #707070;
     text-transform: uppercase;
-    text-align: right;
-    padding:20px 40px 0 0;
+    text-align: left;
+    padding:20px 0 0 40px;
 }
 .header-image{
     text-align: center;
 }
 .header-message{
-    text-align: right;
-    padding:0 40px 0 0;
+    text-align: left;
+    padding:0 0 0 40px;
     font-size: 4rem;
     font-weight: 500;
+}
+.college-button{
+    font-weight: 500;
+    height: 60px;
+    font-size: 1.3rem;
+    background: #00bcd4;
+    color: #fff;
+    margin-left:40px;
+}
+.icon-image{
+    margin-right: 10px;
 }
 .header-image{
     width: 100%;
@@ -53,7 +64,7 @@
 }
 @media(max-width:815px){
 .header-construction-page{
-    margin-top:150px
+    margin-top:100px
 }
 .header-message, .header-question{
     font-size: 3.5rem;
