@@ -112,6 +112,15 @@ export default function AdminPackage() {
                         onClick: (event, rowData) => handleClickOpen(rowData)
                     }
                 ]}
+
+                options={{
+                    exportButton: true,
+                    actionsColumnIndex: -1,
+                    grouping: true,
+                    filtering: true,
+                    columnsButton: true,
+                    padding: 'dense'
+                }}
             />
 
             <div>

@@ -17,7 +17,7 @@ exports.addOrder = async (req,res) => {
         }
 
         if (!isEmpty(req.body._id)) {
-            const order = await Order.findByIdAndUpdate(req.body._id,req.body,{ new: true }).catch((error) =>{throw error}); 
+            const order = await Order.findByIdAndUpdate(req.body._i-d,req.body,{ new: true }).catch((error) =>{throw error}); 
 
             if(order) return res.json({success: true}); 
         }
@@ -87,9 +87,11 @@ exports.addUpdateEquipment = async (req,res) => {
  */
 exports.getPackagesWithEquipments = async (req,res) => {
      try {
-        const packages = await Package.find();  
+        const package_name = req.query.package;
+        
+        const equipments = await Equipment.find({package: package_name}); 
 
-        res.json(packages); 
+        if(equipments) return res.send(equipments);  
 
      } catch(err) {
          console.log(err); 

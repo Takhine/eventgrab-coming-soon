@@ -24,8 +24,8 @@ export default function AdminPackage() {
             { title: 'Name', field: 'name' },
             { title: 'Description', field: 'description' },
             { title: 'slide_image_1', field: 'slide1'}, 
-            { title: 'slide_image_2', field: 'slide2'}, 
-            { title: 'slide_image_3', field: 'slide3'}
+            { title: 'slide_image_2', field: 'slide2', hidden: true}, 
+            { title: 'slide_image_3', field: 'slide3', hidden: true}
         ],
         data: [],
     });
@@ -112,6 +112,15 @@ export default function AdminPackage() {
                         onClick: (event, rowData) => handleClickOpen(rowData)
                     }
                 ]}
+
+                options={{
+                    exportButton: true,
+                    actionsColumnIndex: -1,
+                    grouping: true,
+                    filtering: true,
+                    columnsButton: true,
+                    padding: 'dense'
+                }}
             />
 
             <div>

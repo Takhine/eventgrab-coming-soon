@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router(); 
 const mainCtrl = require('../controllers/main.controller');
 
-router.get('/getAllPackagesWithEquipments', mainCtrl.getPackagesWithEquipments);
+router.get('/getEquipmentByPackage', mainCtrl.getPackagesWithEquipments);
 router.get('/getAllPackages', mainCtrl.getPackages);  
 router.get('/getAllOrders', mainCtrl.getAllOrders); 
 router.get('/getAllEquipments', mainCtrl.getAllEquipments); 
