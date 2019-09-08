@@ -12,6 +12,9 @@ import Box from '@material-ui/core/Box';
 import Header from './Slider.js';
 import Fade from 'react-fade-in';
 
+
+import axios from '../../../api/axios'; 
+
 const { TabPane } = Tabs;
 const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 	// eslint-disable-next-line
@@ -124,9 +127,9 @@ function Items(props) {
 								>
 									<img
 										className="cart-item-thumbnail"
-										alt={item.title}
+										alt={item.name}
 										width="100%"
-										src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+										src={item.thumbnail}
 									/>
 								</Grid>
 								<Grid
@@ -134,7 +137,7 @@ function Items(props) {
 									xs={12}
 									style={{ paddingRight: '10px', textAlign: 'center' }}
 								>
-									<h2 style={{ fontSize: '1.2rem' }}>{item.title}</h2>
+									<h2 style={{ fontSize: '1.2rem' }}>{item.name}</h2>
 								</Grid>
 							</Grid>
 						</CardContent>
@@ -248,7 +251,28 @@ function PackageType(props) {
 class Packages extends React.Component {
 	state = {
 		visible: false,
+		college_package: [],
+		birthday_package: [],
 	};
+	
+	componentDidMount(){
+		axios.get(`/api/getEquipmentByPackage?package=birthday-package`).then((res) => {
+			this.setState({
+				birthday_package: res.data
+			}); 
+		}).catch((err) => {
+			alert('No birthday_package items found'); 
+		})
+
+		axios.get(`/api/getEquipmentByPackage?package=college-package`).then((res) => {
+			this.setState({
+				college_package: res.data
+			}); 
+		}).catch((err) => {
+			alert('No college_package items found');
+		})
+
+	}
 
 	showModal = () => {
 		this.setState({ visible: true });
@@ -286,7 +310,7 @@ class Packages extends React.Component {
 				<div className="package-page-wrapper">
 					<Tabs type="card" defaultActiveKey="0">
 						<TabPane tab="College Fests" key="0">
-							<PackageType showModal={this.showModal} title={collegeTitle} desc={collegeDesc} imageLink={imageLink1} itemList={itemList1} />
+							<PackageType showModal={this.showModal} title={collegeTitle} desc={collegeDesc} imageLink={imageLink1} itemList={this.state.college_package} />
 							<CollectionCreateForm
 								wrappedComponentRef={this.saveFormRef}
 								visible={this.state.visible}
@@ -296,7 +320,7 @@ class Packages extends React.Component {
 							/>
 						</TabPane>
 						<TabPane tab="Birthday" key="1">
-							<PackageType showModal={this.showModal} title={birthdayTitle} desc={birthdayDesc} imageLink={imageLink2} itemList={itemList2} />
+							<PackageType showModal={this.showModal} title={birthdayTitle} desc={birthdayDesc} imageLink={imageLink2} itemList={this.state.birthday_package} />
 							<CollectionCreateForm
 								wrappedComponentRef={this.saveFormRef}
 								visible={this.state.visible}

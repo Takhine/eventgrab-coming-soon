@@ -10,7 +10,7 @@ import {
 /** PAGES IMPORT */
 import Construction from './pages/construction';
 import ScrollToTop from './components/ScrollToTop';
-import Packages from './pages/construction/components/Test';
+import Packages from './pages/construction/components/Package';
 import About from './pages/construction/components/About';
 
 import Admin from './pages/admin';
