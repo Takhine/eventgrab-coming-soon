@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const equipmentSchema = new mongoose.Schema({
     name: String,
-    package_id: {
+    package: {
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Package'
     }, 
