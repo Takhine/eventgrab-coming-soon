@@ -2,13 +2,22 @@ const Order = require('../models/order.model');
 const Equipment = require('../models/equipment.model'); 
 const Package = require('../models/package.model'); 
 
+const {validateOrderInput}    = require('../validator/order.validator'); 
 
 /**
  * ORDERS CONTROLLER 
  */
 exports.addOrder = async (req,res) => {
-    try{        
+    try{
+
+        const { errors, isValid } = validateOrderInput(req.body); 
+
+        if(!isValid) {
+            return res.status(400).json(errors); 
+        }
+
         const order = await Order.create(req.body).catch((error) => {throw error}); 
+        
         if(order) await res.json({success: true}); 
 
     }catch(err){
