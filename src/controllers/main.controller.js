@@ -87,12 +87,12 @@ exports.addUpdateEquipment = async (req,res) => {
  */
 exports.getPackagesWithEquipments = async (req,res) => {
      try {
-        const package_name = req.query.package;
-        
-        const equipments = await Equipment.find({package: package_name}); 
+        const package_name = req.query.package ? req.query.package : '';
+        if(package_name){
+            const equipments = await Equipment.find({package: package_name}); 
 
-        if(equipments) return res.send(equipments);  
-
+            if(equipments) return res.send(equipments);  
+        }
      } catch(err) {
          console.log(err); 
          return res.status(500).end(); 
@@ -111,6 +111,47 @@ exports.getPackages = async (req,res) => {
         console.log(err); 
         return res.status(500).end(); 
     }
+}
+
+exports.getPackageByName = async (req,res) => {
+    try{
+
+        const package_name = req.query.package_name ? req.query.package_name : ''
+
+
+        if(package_name){
+            const package = await Package.findOne({name: package_name}); 
+
+            if(package){ return res.send(package)} else throw Error;  
+        }
+    }catch(err){
+        return res.status(500).end(); 
+    }
+}
+
+
+exports.combineData = async (req,res) => {    
+    try {
+        
+        const data = {
+        college_package: [],
+        birthday_package: [],
+        collPackData: {}, 
+        birthPackData: {}
+        }
+
+    data.college_package = await Equipment.find({package: 'college-package'}); 
+    data.birthday_package = await Equipment.find({package: 'birthday-package'});
+    data.collPackData = await Package.find({name: 'college-package'}); 
+    data.birthPackData = await Package.find({name: 'birthday-package'}); 
+
+
+    res.send(data); 
+
+    }catch(err){
+        return res.status(500).end(); 
+    }
+
 }
 
 

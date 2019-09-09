@@ -11,7 +11,9 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Header from './Slider.js';
 import Fade from 'react-fade-in';
-
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import img from '../../../static/images/about-bg.svg';
 
 import axios from '../../../api/axios'; 
 
@@ -55,58 +57,7 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 	},
 );
 
-const itemList1 = [
-	{
-		id: 1,
-		title: 'Chairs',
-	},
-	{
-		id: 2,
-		title: 'Collar Mic',
-	},
-	{
-		id: 3,
-		title: 'Table',
-	},
-	{
-		id: 4,
-		title: 'Parcan Lights',
-	},
-	{
-		id: 5,
-		title: 'Tables',
-	},
-	{
-		id: 6,
-		title: 'Halogen Lights',
-	},
-	{
-		id: 7,
-		title: 'Speaker Tops',
-	},
-	{
-		id: 8,
-		title: 'Tent Stalls',
-	},
-	{
-		id: 9,
-		title: 'Sound Truss',
-	},
-];
-const itemList2 = [
-	{
-		id: 1,
-		title: 'Chairs',
-	},
-	{
-		id: 2,
-		title: 'Collar Mic',
-	},
-	{
-		id: 3,
-		title: 'Table',
-	},
-];
+
 function Items(props) {
 	return (
 		<Row gutter={8} style={{ marginTop: '10px' }}>
@@ -233,16 +184,29 @@ function PackageType(props) {
 					<div>
 						<Fade delay={1000}>
 							<div className="header-container">
-								<Header imageLink={props.imageLink} />
+							<p>{JSON.stringify()}</p>
+								<Carousel className="custom-carousel" showArrows={false} showStatus={false} emulateTouch={false} showIndicators={false} axis="vertical">
+									<div>
+										<img src={props.packageData.slide1} alt="test" />
+									</div>
+									<div>
+										<img src={props.packageData.slide2} alt="test" />
+									</div>
+									<div>
+										<img src={props.packageData.slide3} alt="test" />
+									</div>
+								</Carousel>
+
+
 							</div>
 						</Fade>
 						<Box className="package-small-wrapper">
-							<PackageSummary showModal={props.showModal} title={props.title} desc={props.desc} itemList={props.itemList} />
+							<PackageSummary showModal={props.showModal} title={props.title} desc={props.packageData.description} itemList={props.itemList} />
 						</Box>
 					</div>
 				</Col>
 				<Col xs={0} md={12} lg={14} className="package-big-wrapper">
-					<PackageSummary showModal={props.showModal} title={props.title} desc={props.desc} itemList={props.itemList} />
+					<PackageSummary showModal={props.showModal} title={props.title} desc={props.packageData.description} itemList={props.itemList} />
 				</Col>
 			</Row>
 		</div>
@@ -253,24 +217,22 @@ class Packages extends React.Component {
 		visible: false,
 		college_package: [],
 		birthday_package: [],
+		collPackData: {}, 
+		birthPackData: {}
 	};
 	
 	componentDidMount(){
-		axios.get(`/api/getEquipmentByPackage?package=birthday-package`).then((res) => {
+		axios.get(`/api/getAllData`).then((res) => {
 			this.setState({
-				birthday_package: res.data
+				birthday_package: res.data.birthday_package, 
+				college_package: res.data.college_package, 
+				collPackData: res.data.collPackData, 
+				birthPackData: res.data.birthPackData
 			}); 
 		}).catch((err) => {
 			alert('No birthday_package items found'); 
 		})
 
-		axios.get(`/api/getEquipmentByPackage?package=college-package`).then((res) => {
-			this.setState({
-				college_package: res.data
-			}); 
-		}).catch((err) => {
-			alert('No college_package items found');
-		})
 
 	}
 
@@ -306,11 +268,14 @@ class Packages extends React.Component {
 		const imageLink1 = "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80";
 		const imageLink2 = "https://images.unsplash.com/photo-1480497490787-505ec076689f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80";
 		return (
+
+			this.state.collPackData.length > 0 
+			&& 
 			<PackageLayout>
 				<div className="package-page-wrapper">
 					<Tabs type="card" defaultActiveKey="0">
 						<TabPane tab="College Fests" key="0">
-							<PackageType showModal={this.showModal} title={collegeTitle} desc={collegeDesc} imageLink={imageLink1} itemList={this.state.college_package} />
+							<PackageType showModal={this.showModal} title={collegeTitle} desc={collegeDesc} imageLink={imageLink1} itemList={this.state.college_package} packageData={this.state.collPackData[0]}   />
 							<CollectionCreateForm
 								wrappedComponentRef={this.saveFormRef}
 								visible={this.state.visible}
@@ -320,7 +285,7 @@ class Packages extends React.Component {
 							/>
 						</TabPane>
 						<TabPane tab="Birthday" key="1">
-							<PackageType showModal={this.showModal} title={birthdayTitle} desc={birthdayDesc} imageLink={imageLink2} itemList={this.state.birthday_package} />
+							<PackageType showModal={this.showModal} title={birthdayTitle} desc={birthdayDesc} imageLink={imageLink2} itemList={this.state.birthday_package}  packageData={this.state.birthPackData[0]}/>
 							<CollectionCreateForm
 								wrappedComponentRef={this.saveFormRef}
 								visible={this.state.visible}
@@ -330,11 +295,12 @@ class Packages extends React.Component {
 							/>
 						</TabPane>
 					</Tabs>
-
 				</div>
+
 			</PackageLayout>
 		);
 	}
+	
 }
 
 export default Packages;
