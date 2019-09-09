@@ -40,7 +40,11 @@ export default function AdminEquipment() {
                     </FormControl>
                 )
             },
-            { title: 'Thumbnail', field: 'thumbnail' }
+            {
+                title: 'Thumbnail',
+                field: 'thumbnail',
+                render: rowData => <img src={rowData.thumbnail} style={{width: 50}}/>
+            }
         ],
         data: [],
     });

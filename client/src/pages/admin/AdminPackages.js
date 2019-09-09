@@ -23,9 +23,21 @@ export default function AdminPackage() {
         columns: [
             { title: 'Name', field: 'name' },
             { title: 'Description', field: 'description' },
-            { title: 'slide_image_1', field: 'slide1'}, 
-            { title: 'slide_image_2', field: 'slide2', hidden: true}, 
-            { title: 'slide_image_3', field: 'slide3', hidden: true}
+            {
+                title: 'slide_image_1',
+                field: 'slide1',
+                render: rowData => <img src={rowData.slide1} style={{width: 50}}/>
+            }, 
+            {
+                title: 'slide_image_2',
+                field: 'slide2',
+                render: rowData => <img src={rowData.slide2} style={{width: 50}}/>
+            }, 
+            {
+                title: 'slide_image_3',
+                field: 'slide3',
+                render: rowData => <img src={rowData.slide3} style={{width: 50}}/>
+            }
         ],
         data: [],
     });
