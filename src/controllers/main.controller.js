@@ -1,12 +1,12 @@
 const Order = require('../models/order.model');
 const Equipment = require('../models/equipment.model'); 
 const Package = require('../models/package.model'); 
+const Enquiry = require('../models/enquiry.model'); 
 const isEmpty = require('../validator/is-empty');
+
 const {validateOrderInput}    = require('../validator/order.validator'); 
 
-/**
- * ORDERS CONTROLLER 
- */
+
 exports.addOrder = async (req,res) => {
     try{
 
@@ -17,7 +17,7 @@ exports.addOrder = async (req,res) => {
         }
 
         if (!isEmpty(req.body._id)) {
-            const order = await Order.findByIdAndUpdate(req.body._i-d,req.body,{ new: true }).catch((error) =>{throw error}); 
+            const order = await Order.findByIdAndUpdate(req.body._id,req.body,{ new: true }).catch((error) =>{throw error}); 
 
             if(order) return res.json({success: true}); 
         }
@@ -39,6 +39,45 @@ exports.getAllOrders = async (req,res) => {
         const orders = await Order.find(); 
 
         if(orders) await res.send(orders); 
+
+    }catch(err) {
+        console.log(err); 
+        return res.status(500).end(); 
+    }
+}
+
+exports.addEnquiry = async (req,res) => {
+    try{
+
+        const { errors, isValid } = validateOrderInput(req.body); 
+
+        if(!isValid) {
+            return res.status(400).json(errors); 
+        }
+
+        if (!isEmpty(req.body._id)) {
+            const enquiry = await Enquiry.findByIdAndUpdate(req.body._id,req.body,{ new: true }).catch((error) =>{throw error}); 
+
+            if(enquiry) return res.json({success: true}); 
+        }
+        
+        const enquiry = await Enquiry.create(req.body).catch((error) => {throw error}); 
+
+        if(order) return res.json({success: true}); 
+
+
+    }catch(err){
+        console.log(err); 
+        return res.status(500).end(); 
+    }
+}
+
+
+exports.getAllEnquiry = async (req,res) => {
+    try{
+        const enquiries = await Enquiry.find(); 
+
+        if(enquiries) await res.send(enquiries); 
 
     }catch(err) {
         console.log(err); 
