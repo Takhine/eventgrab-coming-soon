@@ -8,8 +8,6 @@ const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken(); 
 opts.secretOrKey = keys.secretOrKey; 
 
-
-
 passport.use('jwt-admin-rule', new JwtStrategy(opts, (jwt_payload, done) => {
     Admin.findById(jwt_payload.id)
         .then(admin => {

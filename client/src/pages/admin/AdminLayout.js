@@ -14,6 +14,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Devices from '@material-ui/icons/Devices'; 
 import {withRouter} from 'react-router-dom'; 
+import {isAuthenticated} from './helper'; 
 
 const drawerWidth = 240;
 
@@ -42,6 +43,12 @@ const useStyles = makeStyles(theme => ({
 
 function AdminLayout(props) {
   const classes = useStyles();
+
+  React.useEffect(() => {
+    if(!isAuthenticated()){
+      props.history.push('/admin'); 
+    }
+  }, [props]); 
 
   return (
     <div className={classes.root}>

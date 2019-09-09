@@ -11,6 +11,15 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import jwt_decode from 'jwt-decode';
+
+import setAuthToken from '../../api/setAuthToken';
+import axios from '../../api/axios'; 
+import Swal from 'sweetalert2';
+
+import {withRouter} from 'react-router-dom';
+
+import {isAuthenticated} from './helper'; 
 
 function Copyright() {
   return (
@@ -50,8 +59,41 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Admin() {
+function Admin(props) {
   const classes = useStyles();
+
+  React.useEffect(() => {
+    if (isAuthenticated()) {
+      props.history.push('/admin-equipments'); 
+    }
+  }, []); 
+
+  const [state, setState] = React.useState({
+      'email': '', 
+      'password': '', 
+  })
+
+  const handleChange = (e) => {
+    const name = e.target.name; 
+    const value = e.target.value; 
+
+    setState({
+      ...state, 
+      [name] : value
+    })
+  }
+
+
+  const handleSubmit = () => {
+    axios.post('/api/loginAdmin', state).then((res)=> {
+      const {token} = res.data; 
+      localStorage.setItem('jwtToken', token); 
+      setAuthToken(`Bearer ${token}`); 
+      
+    }).catch((err) => {
+      alert(1);  
+    })
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -73,6 +115,8 @@ export default function Admin() {
             label="Email Address"
             name="email"
             autoComplete="email"
+            value={state.email}
+            onChange={(e) => handleChange(e)}
             autoFocus
           />
           <TextField
@@ -84,11 +128,9 @@ export default function Admin() {
             label="Password"
             type="password"
             id="password"
+            onChange={(e) => handleChange(e)}
+            value={state.password}
             autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
           />
           <Button
             type="submit"
@@ -96,6 +138,7 @@ export default function Admin() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={() => handleSubmit()}
           >
             Sign In
           </Button>
@@ -107,3 +150,5 @@ export default function Admin() {
     </Container>
   );
 }
+
+export default withRouter(Admin); 
