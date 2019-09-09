@@ -5,9 +5,45 @@ import vendor from '../../../static/images/vendor.svg';
 import organiser from '../../../static/images/organiser.svg';
 import performer from '../../../static/images/performer.svg';
 import Fadein from 'react-reveal/Fade';
+
+import Swal from 'sweetalert2'; 
+import axios from '../../../api/axios'; 
+
 const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
     // eslint-disable-next-line
     class extends React.Component {
+
+        state = {
+			email: '', 
+			contact_number: '', 
+		}
+		
+		handleChange(e) {
+			const name = e.target.name; 
+			const value = e.target.value; 
+			this.setState({
+				[name]: value 
+			})
+		}
+
+		handleSubmit() {
+			axios.post('/api/createEnquiry', this.state).then((res) => {
+				Swal.fire(
+				  'Thank you for the enquiry!',
+				  'Someone will contact you soon.',
+				  'success'
+				).then(()=>{
+					window.location.reload(); 
+				})
+
+			}).catch((err) => {
+				alert('Failed to create order')
+			})
+        }
+        
+
+
+
         render() {
             const { visible, onCancel, onCreate, form, title } = this.props;
             const { getFieldDecorator } = form;
@@ -17,7 +53,7 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
                     title={title}
                     okText="Submit"
                     onCancel={onCancel}
-                    onOk={onCreate}
+                    onOk={() => this.handleSubmit()}
                 >
                     <Form layout="vertical">
                         <Form.Item label="Email">
@@ -28,13 +64,13 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
                                         message: 'The input is not valid E-mail!',
                                     },
                                     { required: true, message: 'Please input your email ID' }],
-                            })(<Input type="email" placeholder="info@eventgrab.com" />)}
+                            })(<Input type="email" placeholder="info@eventgrab.com" name="email" value={this.email} onChange={(e) => this.handleChange(e)} />)}
                         </Form.Item>
                         <Form.Item label="Contact Number">
                             {getFieldDecorator('number', {
                                 rules: [
                                     { required: true, message: 'Please enter a phone number' }],
-                            })(<Input addonBefore="+91" placeholder="8104142534" />
+                            })(<Input addonBefore="+91" placeholder="8104142534" name="contact_number" value={this.contact_number} onChange={(e) => this.handleChange(e)} />
                             )}
                         </Form.Item>
                     </Form>
@@ -106,7 +142,7 @@ class Partners extends React.Component {
     state = {
         visible: false,
     };
-
+    
     showModal = () => {
         this.setState({ visible: true });
     };
