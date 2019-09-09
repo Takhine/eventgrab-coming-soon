@@ -13,8 +13,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Devices from '@material-ui/icons/Devices'; 
+import Cancel from '@material-ui/icons/Cancel'; 
 import {withRouter} from 'react-router-dom'; 
-import {isAuthenticated} from './helper'; 
+import {isAuthenticated, logOut} from './helper'; 
+import { IconButton } from '@material-ui/core';
 
 const drawerWidth = 240;
 
@@ -50,6 +52,12 @@ function AdminLayout(props) {
     }
   }, [props]); 
 
+
+  function handleLogout() {
+    logOut();
+    props.history.push('/') 
+  }
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -58,6 +66,10 @@ function AdminLayout(props) {
           <Typography variant="h6" noWrap style={{color: 'white'}}>
             eventgrab coming soon 2.0 - admin
           </Typography>
+
+          <div style={{marginLeft: 'auto'}}>
+          <IconButton color="inherit" onClick={() => handleLogout()}><Cancel/></IconButton>
+        </div>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -93,7 +105,7 @@ function AdminLayout(props) {
             </ListItem>
 
         </List>
-      </Drawer>
+       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {props.children}

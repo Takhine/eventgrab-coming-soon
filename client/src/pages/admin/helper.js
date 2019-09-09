@@ -25,3 +25,9 @@ export function isAuthenticated() {
 
       return false; 
 }
+
+
+export function logOut() {
+    localStorage.removeItem('jwtToken');
+    setAuthToken(false);
+} 
