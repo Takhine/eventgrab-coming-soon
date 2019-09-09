@@ -17,6 +17,7 @@ import Admin from './pages/admin';
 import AdminPackages from './pages/admin/AdminPackages'
 import AdminEquipments from './pages/admin/AdminEquipments';
 import AdminOrders from './pages/admin/AdminOrders';
+import AdminEnquiry from './pages/admin/AdminEnquiries';
 
 /* Global, cards, item page */
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/admin-packages" exact={true} component={AdminPackages}/>
           <Route path="/admin-equipments" exact={true} component={AdminEquipments}/>
           <Route path="/admin-orders" exact={true} component={AdminOrders}/>
+          <Route path="/admin-enquiries" exact={true} component={AdminEnquiry}/>
 
           <Route render={() => <h1>Page not found</h1>} />
         </Switch>

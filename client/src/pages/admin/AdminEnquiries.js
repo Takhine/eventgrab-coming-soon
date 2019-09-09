@@ -18,13 +18,13 @@ import moment from 'moment'
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 
-export default function AdminOrders() {
+export default function AdminEnquiry() {
     const [state, setState] = React.useState({
         columns: [
             { title: 'Email', field: 'email' },
             { title: 'Contact', field: 'contact_number' }, 
             { title: 'Comments', field: 'comments'}, 
-            { title: 'Package', field: 'package'}, 
+            { title: 'Type', field: 'type'}, 
             { title: 'Order Date', 
               field: 'created_at', 
             render: rowData => moment(rowData.created_at).format("DD MMM YY")}
@@ -34,7 +34,7 @@ export default function AdminOrders() {
 
 
     const [dialogOpen, setDialogOpen] = useState(false);
-    const [dialogData, setDialogData] = useState({email: '', contact_number: '', comments: '', package: ''});
+    const [dialogData, setDialogData] = useState({email: '', contact_number: '', comments: '', type: ''});
 
     function handleClickOpen(rowData = {}) {
         setDialogData({
@@ -57,7 +57,7 @@ export default function AdminOrders() {
             data["_id"] = dialogData._id; 
         }
 
-         await axios.post('/api/createOrder', data).then((res) => {
+         await axios.post('/api/createEnquiry', data).then((res) => {
             handleClose(); 
             window.location.reload();
         }).catch((err) => {
@@ -81,7 +81,7 @@ export default function AdminOrders() {
     }
 
     React.useEffect(() => {
-        axios.get('/api/getAllOrders')
+        axios.get('/api/getAllEnquiries')
             .then((res) => {
                 setState({
                     ...state,
@@ -96,7 +96,7 @@ export default function AdminOrders() {
     return (
         <AdminLayout>
             <MaterialTable
-                title="View Orders"
+                title="View Enquiries"
                 columns={state.columns}
                 data={state.data}
                 actions={[
@@ -104,7 +104,7 @@ export default function AdminOrders() {
                         icon: 'add',
                         tooltip: 'Add Order',
                         isFreeAction: true,
-                        onClick: (event) =>handleClickOpen({email: '', contact_number: '', comments: '', package: ''})
+                        onClick: (event) =>handleClickOpen({email: '', contact_number: '', comments: '', type: ''})
                     },
                     {
                         icon: 'edit',
@@ -128,7 +128,7 @@ export default function AdminOrders() {
                 open={dialogOpen}
                 onClose={handleClose}
             >
-                <DialogTitle id="add-update-dialog-category">{"Add/Update Orders"}</DialogTitle>
+                <DialogTitle id="add-update-dialog-category">{"Add/Update Enquiries"}</DialogTitle>
                 <Divider />
 
                 <DialogContent>
@@ -159,7 +159,7 @@ export default function AdminOrders() {
 
                     <div>
                         <FormControl>
-                            <InputLabel htmlFor="age-native-simple">Package</InputLabel>
+                            <InputLabel htmlFor="age-native-simple">Type</InputLabel>
                             <Select
                             native
                             style={{width: 250}}
@@ -168,8 +168,9 @@ export default function AdminOrders() {
                             name="package"
                             >
                             <option value="" />
-                            <option value={'college-package'}>college-package</option>
-                            <option value={'birthday-package'}>birthday-package</option>
+                            <option value={'vendors'}>Vendors</option>
+                            <option value={'performers'}>Performers</option>
+                            <option value={'organizers'}>Organizers</option>
                             </Select>
                         </FormControl>
                     </div>

@@ -63,7 +63,7 @@ exports.addEnquiry = async (req,res) => {
         
         const enquiry = await Enquiry.create(req.body).catch((error) => {throw error}); 
 
-        if(order) return res.json({success: true}); 
+        if(enquiry) return res.json({success: true}); 
 
 
     }catch(err){

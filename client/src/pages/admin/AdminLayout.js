@@ -79,7 +79,11 @@ function AdminLayout(props) {
             <ListItemIcon><InboxIcon/></ListItemIcon>
               <ListItemText primary={'Orders'} />
             </ListItem>
-
+            
+            <ListItem button key={'Enquiries'} onClick={() => props.history.push('/admin-enquiries') }>
+            <ListItemIcon><InboxIcon/></ListItemIcon>
+              <ListItemText primary={'Enquiries'} />
+            </ListItem>
 
         </List>
       </Drawer>
