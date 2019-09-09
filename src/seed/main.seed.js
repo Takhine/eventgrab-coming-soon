@@ -1,5 +1,7 @@
 const Package   = require('../models/package.model'); 
 const Equipment = require('../models/equipment.model'); 
+const Admin     = require('../models/admin.model'); 
+const bcrypt = require('bcryptjs'); 
 
 db = require('../db/index');
 
@@ -14,6 +16,19 @@ const loadData =  async () => {
         console.log('Error clearing the package data');
     });
 
+
+    const newAdmin = new Admin({
+        email: 'admin@eventgrab.com', 
+        password: 'eventgrab101@'
+    });  
+    
+    bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash(newAdmin.password, salt, function(err, hash) {
+            if(err) throw err; 
+            newAdmin.password = hash; 
+            newAdmin.save() 
+        });
+    });
 
     await Equipment.deleteMany({}).then((res) => {
         console.log('All equipment cleared')
@@ -36,16 +51,12 @@ const loadData =  async () => {
         slide3: imageLink2 
     }); 
 
-
-
     await Equipment.create({
         name: 'Chairs',
         package: 'college-package', 
         description: 'somedescription', 
         thumbnail: thumbnail_img,     
     })
-
-
 
     await Equipment.create({
         name: 'Chairs',
@@ -57,7 +68,6 @@ const loadData =  async () => {
     console.log('all data loaded')
     db.close(); 
 }; 
-
 
 loadData(); 
 

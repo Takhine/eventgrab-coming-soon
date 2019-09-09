@@ -2,10 +2,15 @@ const Order = require('../models/order.model');
 const Equipment = require('../models/equipment.model'); 
 const Package = require('../models/package.model'); 
 const Enquiry = require('../models/enquiry.model'); 
+const Admin   = require('../models/admin.model'); 
 const isEmpty = require('../validator/is-empty');
 
 const {validateOrderInput}    = require('../validator/order.validator'); 
+const {validateLoginInput}    = require('../validator/login.validator'); 
 
+const bcrypt = require('bcryptjs'); 
+const jwt = require('jsonwebtoken');
+const {secretOrKey} = require('../config/keys'); 
 
 exports.addOrder = async (req,res) => {
     try{
@@ -212,6 +217,57 @@ exports.addUpdatePackage = async (req,res) => {
     }
 }
 
+
+exports.loginAdmin = async (req,res) => {
+    try{
+
+        const { errors, isValid } = validateLoginInput(req.body); 
+
+        if(!isValid) {
+            return res.status(400).json(errors); 
+        }
+
+        const email = req.body.email; 
+        const password = req.body.password; 
+        const admin = await Admin.findOne({email}); 
+        
+        if(isEmpty(admin)){
+            errors.email = "Email not found"; 
+            return res.status(404).json(errors); 
+        }
+
+        // Check Password 
+        bcrypt.compare(password, admin.password)
+            .then(isMatch => {
+                if(isMatch) {
+                    // Host Matched 
+                    const payload = {
+                        id: admin.id,
+                        name: admin.name,
+                        email: admin.email 
+                    }
+
+                    // Sign Token 
+                    jwt.sign(
+                        payload, 
+                        secretOrKey,
+                        { expiresIn: "48h"},
+                        (err, token) => {
+                            res.json({
+                                success: true, 
+                                token: token 
+                            }); 
+                        }); 
+                }else{
+                    errors.password = 'Password is incorrect'
+                    return res.status(400).json(errors); 
+                }
+            }); 
+    }catch(err){
+       console.log(err); 
+       return res.status(500).end(); 
+    }
+}; 
 
 
 

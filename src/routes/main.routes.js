@@ -16,4 +16,7 @@ router.post('/addUpdatePackage', mainCtrl.addUpdatePackage);
 router.post('/createOrder', mainCtrl.addOrder); 
 router.post('/createEnquiry', mainCtrl.addEnquiry); 
 
+
+router.post('/loginAdmin', mainCtrl.loginAdmin); 
+
 module.exports = router; 
