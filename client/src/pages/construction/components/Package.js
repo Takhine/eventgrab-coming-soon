@@ -155,8 +155,7 @@ function Services() {
 							<img src={service} alt="Customer Care Person" />
 						</Col>
 						<Col xs={14} sm={18}>
-							<p>Colleges across Mumbai hosting some of the best fests,
-				 workshops and other such event experiences.</p>
+							<p>Dedicated co-ordinator to help you with your event needs.</p>
 						</Col>
 					</Row>
 				</Fade>
@@ -166,8 +165,7 @@ function Services() {
 							<img src={delivery} alt="Delivery Truck" />
 						</Col>
 						<Col xs={14} sm={18}>
-							<p>Colleges across Mumbai hosting some of the best fests,
-				 workshops and other such event experiences.</p>
+							<p>On-time delivery, we make sure the setup is done for you before your event even starts.</p>
 						</Col>
 					</Row>
 				</Fade>
@@ -177,8 +175,7 @@ function Services() {
 							<img src={quality} alt="5 Star Tool" />
 						</Col>
 						<Col xs={14} sm={18}>
-							<p>Colleges across Mumbai hosting some of the best fests,
-				 workshops and other such event experiences.</p>
+							<p>Only quality assured equipment is sent your way.</p>
 						</Col>
 					</Row>
 				</Fade>

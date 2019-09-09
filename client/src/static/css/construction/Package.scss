@@ -27,7 +27,7 @@
     // box-shadow: -6px 4px 20px 0 rgba(0,0,0,.05);
 }
 .package-wrapper .package-details-wrapper .package-details{
-    padding:20px;
+    // padding:20px;
     margin-top:20px;
     margin-bottom: 0;
     background-color: #fafafa;
@@ -197,6 +197,10 @@ margin-left: 0;
     color:#00bcd4;
     font-weight: 600;
     font-size:1.2rem;
+}
+.cart-item-thumbnail{
+    max-height: 150px;
+    min-height:150px;
 }
 .package-page-wrapper .MuiPaper-elevation1{
     box-shadow: none;
