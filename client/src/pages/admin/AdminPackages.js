@@ -26,17 +26,17 @@ export default function AdminPackage() {
             {
                 title: 'slide_image_1',
                 field: 'slide1',
-                render: rowData => <img src={rowData.slide1} style={{width: 50}}/>
+                render: rowData => <img src={rowData.slide1} style={{width: 70}}/>
             }, 
             {
                 title: 'slide_image_2',
                 field: 'slide2',
-                render: rowData => <img src={rowData.slide2} style={{width: 50}}/>
+                render: rowData => <img src={rowData.slide2} style={{width: 70}}/>
             }, 
             {
                 title: 'slide_image_3',
                 field: 'slide3',
-                render: rowData => <img src={rowData.slide3} style={{width: 50}}/>
+                render: rowData => <img src={rowData.slide3} style={{width: 70}}/>
             }
         ],
         data: [],

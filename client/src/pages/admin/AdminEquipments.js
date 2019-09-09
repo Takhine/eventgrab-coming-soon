@@ -43,7 +43,7 @@ export default function AdminEquipment() {
             {
                 title: 'Thumbnail',
                 field: 'thumbnail',
-                render: rowData => <img src={rowData.thumbnail} style={{width: 50}}/>
+                render: rowData => <img src={rowData.thumbnail} style={{width: 70}}/>
             }
         ],
         data: [],
