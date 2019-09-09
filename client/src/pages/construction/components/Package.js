@@ -16,11 +16,44 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import img from '../../../static/images/about-bg.svg';
 
 import axios from '../../../api/axios'; 
+import TextArea from 'antd/lib/input/TextArea';
+
+import Swal from 'sweetalert2'
 
 const { TabPane } = Tabs;
 const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 	// eslint-disable-next-line
 	class extends React.Component {
+		state = {
+			email: '', 
+			contact_number: '', 
+			comments: '', 
+			package: this.props.packageName, 
+		}
+		
+		handleChange(e) {
+			const name = e.target.name; 
+			const value = e.target.value; 
+			this.setState({
+				[name]: value 
+			})
+		}
+
+		handleSubmit() {
+			axios.post('/api/createOrder', this.state).then((res) => {
+				Swal.fire(
+				  'We\'ve got your requirements!',
+				  'Someone will contact you soon.',
+				  'success'
+				).then(()=>{
+					window.location.reload(); 
+				})
+
+			}).catch((err) => {
+				alert('Failed to create order')
+			})
+		}
+
 		render() {
 			const { visible, onCancel, onCreate, form, title } = this.props;
 			const { getFieldDecorator } = form;
@@ -30,7 +63,7 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 					title={title}
 					okText="Submit"
 					onCancel={onCancel}
-					onOk={onCreate}
+					onOk={()=> this.handleSubmit()}
 				>
 					<Form layout="vertical">
 						<Form.Item label="Email">
@@ -41,15 +74,21 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 										message: 'The input is not valid E-mail!',
 									},
 									{ required: true, message: 'Please input your email ID' }],
-							})(<Input type="email" placeholder="info@eventgrab.com" />)}
+							})(<Input type="email" placeholder="info@eventgrab.com" name="email" value={this.email} onChange={(e) => this.handleChange(e)} />)}
 						</Form.Item>
 						<Form.Item label="Contact Number">
 							{getFieldDecorator('number', {
 								rules: [
 									{ required: true, message: 'Please enter a phone number' }],
-							})(<Input addonBefore="+91" placeholder="8104142534" />
+							})(<Input addonBefore="+91" placeholder="8104142534" name="contact_number" value={this.contact_number} onChange={(e) => this.handleChange(e)}/>
 							)}
 						</Form.Item>
+
+						<Form.Item label="Comments">
+						{getFieldDecorator('text', {
+						})(<TextArea placeholder="Have something to say?" name="comments" value={this.comments} onChange={(e) => this.handleChange(e)}/>
+						)}
+					</Form.Item>
 					</Form>
 				</Modal>
 			);
@@ -282,6 +321,7 @@ class Packages extends React.Component {
 								onCancel={this.handleCancel}
 								onCreate={this.handleCreate}
 								title={collegeTitle}
+								packageName={"college-package"}
 							/>
 						</TabPane>
 						<TabPane tab="Birthday" key="1">
@@ -292,6 +332,7 @@ class Packages extends React.Component {
 								onCancel={this.handleCancel}
 								onCreate={this.handleCreate}
 								title={birthdayTitle}
+								packageName={"birthday-package"}
 							/>
 						</TabPane>
 					</Tabs>
