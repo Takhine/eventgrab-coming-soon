@@ -155,7 +155,8 @@ class Partners extends React.Component {
     
     showModal = (enquire_type) => {
         this.setState({
-            visible: true,             
+            visible: true, 
+            type: enquire_type            
         });
 
         type = enquire_type; 
