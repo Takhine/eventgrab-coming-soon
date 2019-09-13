@@ -14,10 +14,11 @@ import Fade from 'react-fade-in';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import img from '../../../static/images/about-bg.svg';
+import { DatePicker } from 'antd';
 
 import axios from '../../../api/axios'; 
 import TextArea from 'antd/lib/input/TextArea';
-
+import moment from 'moment'; 
 import Swal from 'sweetalert2'
 
 const { TabPane } = Tabs;
@@ -29,6 +30,8 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 			contact_number: '', 
 			comments: '', 
 			package: this.props.packageName, 
+			startDate: '', 
+			endDate: '', 
 		}
 		
 		handleChange(e) {
@@ -52,6 +55,31 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 			}).catch((err) => {
 				alert('Failed to create order')
 			})
+		}
+
+
+		disabledDate(current) {
+			// Can not select days before today and today
+			return current && current < moment().endOf('day');
+		}
+
+
+		handleDateChange(dates) {
+
+
+			if(dates.length > 0){
+				const start = dates[0]
+				const end = dates[1]; 
+
+				this.setState({
+					startDate: start, 
+					endDate: end
+				})
+			}
+
+
+
+
 		}
 
 		render() {
@@ -83,12 +111,24 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 							})(<Input addonBefore="+91" placeholder="8104142534" name="contact_number" value={this.contact_number} onChange={(e) => this.handleChange(e)}/>
 							)}
 						</Form.Item>
+						
+						<Form.Item label="Event Date">
+							<DatePicker.RangePicker 
+								disabledDate={this.disabledDate}
+								onChange={e => this.handleDateChange(e)}
+							 />
+						</Form.Item>
 
 						<Form.Item label="Comments">
-						{getFieldDecorator('text', {
-						})(<TextArea placeholder="Have something to say?" name="comments" value={this.comments} onChange={(e) => this.handleChange(e)}/>
-						)}
-					</Form.Item>
+							{getFieldDecorator('text', {
+							})(<TextArea placeholder="Have something to say?" name="comments" value={this.comments} onChange={(e) => this.handleChange(e)}/>
+							)}
+						</Form.Item>
+						
+
+
+
+
 					</Form>
 				</Modal>
 			);
