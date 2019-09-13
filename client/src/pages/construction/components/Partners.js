@@ -10,15 +10,17 @@ import Swal from 'sweetalert2';
 import axios from '../../../api/axios'; 
 import TextArea from 'antd/lib/input/TextArea';
 
+
+let type = ""; 
+
 const CollectionCreateForm = Form.create({ name: 'form_in_modal'})(
     // eslint-disable-next-line
     class extends React.Component {
         state = {
 			email: '', 
             contact_number: '', 
-            type: this.props.type 
-		}
-		
+        }
+
 		handleChange(e) {
 			const name = e.target.name; 
 			const value = e.target.value; 
@@ -28,7 +30,11 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal'})(
 		}
 
 		handleSubmit() {
-			axios.post('/api/createEnquiry', this.state).then((res) => {
+            const data = {
+                ...this.state, 
+                type: type
+            }
+			axios.post('/api/createEnquiry',data).then((res) => {
 				Swal.fire(
 				  'Thank you for the enquiry!',
 				  'Someone will contact you soon.',
@@ -42,7 +48,7 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal'})(
 			})
         }
         
-        render() {
+        render() {         
             const { visible, onCancel, onCreate, form, title } = this.props;
             const { getFieldDecorator } = form;
             return (
@@ -145,14 +151,14 @@ function PartnersCard(props) {
 class Partners extends React.Component {
     state = {
         visible: false,
-        type: ''
     };
     
     showModal = (enquire_type) => {
         this.setState({
-            visible: true, 
-            type: enquire_type    
+            visible: true,             
         });
+
+        type = enquire_type; 
     };
 
     handleCancel = () => {
@@ -168,7 +174,6 @@ class Partners extends React.Component {
                 return;
             }
 
-            console.log('Received values of form: ', values);
             form.resetFields();
             this.setState({ visible: false });
         });
