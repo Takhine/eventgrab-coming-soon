@@ -66,7 +66,6 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 
 		handleDateChange(dates) {
 
-
 			if(dates.length > 0){
 				const start = dates[0]
 				const end = dates[1]; 
@@ -76,9 +75,6 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 					endDate: end
 				})
 			}
-
-
-
 
 		}
 

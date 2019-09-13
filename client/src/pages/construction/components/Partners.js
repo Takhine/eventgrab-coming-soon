@@ -8,14 +8,15 @@ import Fadein from 'react-reveal/Fade';
 
 import Swal from 'sweetalert2'; 
 import axios from '../../../api/axios'; 
+import TextArea from 'antd/lib/input/TextArea';
 
-const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
+const CollectionCreateForm = Form.create({ name: 'form_in_modal'})(
     // eslint-disable-next-line
     class extends React.Component {
-
         state = {
 			email: '', 
-			contact_number: '', 
+            contact_number: '', 
+            type: this.props.type 
 		}
 		
 		handleChange(e) {
@@ -41,9 +42,6 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 			})
         }
         
-
-
-
         render() {
             const { visible, onCancel, onCreate, form, title } = this.props;
             const { getFieldDecorator } = form;
@@ -73,6 +71,12 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
                             })(<Input addonBefore="+91" placeholder="8104142534" name="contact_number" value={this.contact_number} onChange={(e) => this.handleChange(e)} />
                             )}
                         </Form.Item>
+
+                        <Form.Item label="Comments">
+                            {getFieldDecorator('text', {
+                            })(<TextArea placeholder="Have something to say?" name="comments" value={this.comments} onChange={(e) => this.handleChange(e)}/>
+                            )}
+                        </Form.Item>
                     </Form>
                 </Modal>
             );
@@ -94,7 +98,7 @@ function PartnersCard(props) {
                             <h2 className="text-center partner-heading">Vendors</h2>
                             <p className="text-center partner-message">Earn a passive income by renting out your equipment, for events or daily use!</p>
                             <div className="text-center">
-                                <Button className="partner-button" onClick={props.showModal}>Enquire</Button>
+                                <Button className="partner-button" onClick={() => props.showModal('Vendors')}>Enquire</Button>
                             </div>
                         </Fadein>
 
@@ -111,7 +115,7 @@ function PartnersCard(props) {
                             <h2 className="text-center partner-heading">Performers</h2>
                             <p className="text-center partner-message">Get booked for gigs and performances at events across Mumbai city! </p>
                             <div className="text-center">
-                                <Button className="partner-button" onClick={props.showModal}>Enquire</Button>
+                                <Button className="partner-button" onClick={() => props.showModal('Performers')}>Enquire</Button>
                             </div>
                         </Fadein>
 
@@ -128,7 +132,7 @@ function PartnersCard(props) {
                             <h2 className="text-center partner-heading">Organisers</h2>
                             <p className="text-center partner-message">Have professional experience organizing events? Call us to collaborate!</p>
                             <div className="text-center">
-                                <Button className="partner-button" onClick={props.showModal}>Enquire</Button>
+                                <Button className="partner-button" onClick={() => props.showModal('Organizers')}>Enquire</Button>
                             </div>
                         </Fadein>
 
@@ -141,14 +145,20 @@ function PartnersCard(props) {
 class Partners extends React.Component {
     state = {
         visible: false,
+        type: ''
     };
     
-    showModal = () => {
-        this.setState({ visible: true });
+    showModal = (enquire_type) => {
+        this.setState({
+            visible: true, 
+            type: enquire_type    
+        });
     };
 
     handleCancel = () => {
-        this.setState({ visible: false });
+        this.setState({ 
+            visible: false, 
+        });
     };
 
     handleCreate = () => {
@@ -176,7 +186,8 @@ class Partners extends React.Component {
                     visible={this.state.visible}
                     onCancel={this.handleCancel}
                     onCreate={this.handleCreate}
-                    title={"Get in touch"}
+                    title={`Get in touch - ${this.state.type}`}
+                    type={this.state.type}
                 />
             </React.Fragment>
         )
