@@ -5,6 +5,10 @@ const equipmentSchema = new mongoose.Schema({
     package: String, 
     description: String, 
     thumbnail: String, 
+    isAddOn: {
+        type: Boolean, 
+        default: false, 
+    }
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at'}});  
 
  module.exports =  mongoose.model('Equipment', equipmentSchema); 

@@ -132,7 +132,18 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 	},
 );
 
-
+const customStyles = {
+	tag: {
+		position: 'absolute', 
+		right: '4px',
+		marginTop: '10px',
+		padding: '5px',
+		backgroundColor: '#00bcd4',
+		borderRadius: '20px 0px 0px 20px', 
+		color: '#fff', 
+		fontWeight: 'bold' 
+	}
+}
 function Items(props) {
 	return (
 		<Row gutter={8} style={{ marginTop: '10px' }}>
@@ -145,6 +156,7 @@ function Items(props) {
 					key={item.id}
 				>
 					<Card className="cart-card">
+						<span style={customStyles.tag}>Add On</span>
 						<CardContent className="cart-card-content">
 							<Grid container item xs={12} className="cart-item-body">
 								<Grid

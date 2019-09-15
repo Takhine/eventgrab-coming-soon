@@ -12,6 +12,9 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import Switch from '@material-ui//core/Switch'; 
+import FormControlLabel from '@material-ui/core/FormControlLabel'; 
+
 import axios from '../../api/axios';
 
 
@@ -44,14 +47,15 @@ export default function AdminEquipment() {
                 title: 'Thumbnail',
                 field: 'thumbnail',
                 render: rowData => <img src={rowData.thumbnail} style={{width: 70}}/>
-            }
+            }, 
+            { title: 'Is Add On?', field: 'isAddOn', type: 'boolean'}
         ],
         data: [],
     });
 
 
     const [dialogOpen, setDialogOpen] = useState(false);
-    const [dialogData, setDialogData] = useState({name: '', description: '', package: '', thumbnail: ''});
+    const [dialogData, setDialogData] = useState({name: '', description: '', package: '', thumbnail: '', isAddOn: false});
 
     function handleClickOpen(rowData = {}) {
         setDialogData({
@@ -68,6 +72,7 @@ export default function AdminEquipment() {
             "description": dialogData.description, 
             "package": dialogData.package, 
             "thumbnail": dialogData.thumbnail, 
+            "isAddOn": dialogData.isAddOn
         }
 
         if(dialogData._id){
@@ -97,6 +102,14 @@ export default function AdminEquipment() {
 
     }
 
+
+    const handleCheckBoxChange = () => {
+        setDialogData({
+            ...dialogData, 
+            isAddOn: !dialogData.isAddOn
+        })
+    } 
+
     React.useEffect(() => {
         axios.get('/api/getAllEquipments')
             .then((res) => {
@@ -122,7 +135,7 @@ export default function AdminEquipment() {
                         icon: 'add',
                         tooltip: 'Add Equipment',
                         isFreeAction: true,
-                        onClick: (event) =>handleClickOpen({name: '', description: '', package: '', thumbnail: ''})
+                        onClick: (event) =>handleClickOpen({name: '', description: '', package: '', thumbnail: '', isAddOn: false})
                     },
                     {
                         icon: 'edit',
@@ -202,6 +215,14 @@ export default function AdminEquipment() {
                                 fullWidth
                                 value={dialogData.thumbnail}
                                 onChange={handleChange}
+                            />
+                        </div>
+
+
+                        <div>
+                            <FormControlLabel
+                                control={<Switch checked={dialogData.isAddOn} onChange={handleCheckBoxChange} />}
+                                label="is Add On"
                             />
                         </div>
 

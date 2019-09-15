@@ -62,7 +62,8 @@ const loadData =  async () => {
         name: 'Chairs',
         package: 'birthday-package', 
         description: 'somedescription', 
-        thumbnail: thumbnail_img,     
+        thumbnail: thumbnail_img,    
+        isAddOn: true, 
     })
 
     console.log('all data loaded')
