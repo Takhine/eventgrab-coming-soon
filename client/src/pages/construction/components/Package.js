@@ -156,7 +156,7 @@ function Items(props) {
 					key={item.id}
 				>
 					<Card className="cart-card">
-						<span style={customStyles.tag}>Add On</span>
+						{item.isAddOn && <span style={customStyles.tag}>Add On</span>}
 						<CardContent className="cart-card-content">
 							<Grid container item xs={12} className="cart-item-body">
 								<Grid
