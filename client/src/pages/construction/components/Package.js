@@ -18,6 +18,7 @@ import axios from '../../../api/axios';
 import TextArea from 'antd/lib/input/TextArea';
 import moment from 'moment'; 
 import Swal from 'sweetalert2'
+import {Helmet} from 'react-helmet';
 
 const { TabPane } = Tabs;
 const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
@@ -383,6 +384,13 @@ class Packages extends React.Component {
 			this.state.collPackData.length > 0 
 			&& 
 			<PackageLayout>
+                <Helmet>
+                <title>College Fest Package | Rent Equipment</title>
+				<meta name="description" content="College fests in Mumbai have reached new heights of glory! Join the eventgrab community and rent equipment like AV, lights, decor and furniture for your college event. 
+				Book your equipment with ease."/>
+                <meta name="keywords" content="party equipment rental, rent party supplies, chair and table rentals, open mic, college fest, equipment rental, events, eventgrab, house party, birthday party, festival, cheap rental, rent equipment, rent offers," />
+                <meta name="robots" content="index,follow"/>
+            </Helmet>
 				<div className="package-page-wrapper">
 					<Tabs type="card" defaultActiveKey="0">
 						<TabPane tab="College Fests" key="0">

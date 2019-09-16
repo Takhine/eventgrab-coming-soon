@@ -7,6 +7,7 @@ import { Card, Icon, Button } from 'antd';
 import Footer from '../components/Footer';
 import Fadein from 'react-reveal/Fade';
 import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import {Helmet} from 'react-helmet';
 
 const { Meta } = Card;
 
@@ -76,6 +77,15 @@ export default class About extends React.Component{
     render(){
     return(
         <PackageLayout>
+            <Helmet>
+                <title>Equipment Renting Services | Package deals</title>
+                <meta name="description" content="Eventgrab leads the event management industry in college fests, house parties and birthday parties.
+                 We're an event renting company Mumbai and help plan all kinds of events. 
+                 Join the eventgrab community and rent equipment like AV, lights, decor and furniture for your event. 
+				Book your equipment with ease."/>
+                <meta name="keywords" content="party equipment rental, rent party supplies, chair and table rentals, open mic, college fest, equipment rental, events, eventgrab, house party, birthday party, festival, cheap rental, rent equipment, rent offers," />
+                <meta name="robots" content="index,follow"/>
+            </Helmet>
         <div name="about" className="about-construction-page">
             <div className="about-construction-wrapper">
             <Box className="about-message-wrapper">
