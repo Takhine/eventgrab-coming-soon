@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#00bcd4}
+        </style>
+    </defs>
+    <g id="favicon" transform="translate(-110 -46)">
+        <path id="Rectangle_105" d="M0 0h32v32H0z" class="cls-1" data-name="Rectangle 105" transform="translate(110 46)"/>
+        <g id="event-grab-03" transform="translate(114.423 51.227)">
+            <path id="Path_187" d="M107.366 59.288l4.966-4.964a1.224 1.224 0 1 1 1.731 1.731L109.1 61.02a2.787 2.787 0 0 0 3.942 3.942L118.007 60a1.224 1.224 0 1 1 1.731 1.731l-4.965 4.964a5.236 5.236 0 0 1-7.407-7.4z" class="cls-2" data-name="Path 187" transform="translate(-101.79 -51.129)"/>
+            <path id="Path_188" d="M182.593 113.257l4.967-4.967a1.22 1.22 0 0 1 1.724 0l.006.006a1.22 1.22 0 0 1 0 1.724l-4.968 4.968a1.22 1.22 0 0 1-1.724 0l-.006-.009a1.22 1.22 0 0 1 .001-1.722z" class="cls-2" data-name="Path 188" transform="translate(-174.174 -102.26)"/>
+            <path id="Path_189" d="M52.431 11.3l-7.114 7.095A9.263 9.263 0 1 1 32.2 5.31L37.178.346a1.226 1.226 0 0 1 1.736 1.731l-4.979 4.965a6.811 6.811 0 0 0 9.647 9.618l6.958-6.938-4.823-4.809a1.226 1.226 0 1 1 1.736-1.731l4.979 4.964a2.225 2.225 0 0 1 0 3.15z" class="cls-2" data-name="Path 189" transform="translate(-29.48 .012)"/>
+        </g>
+    </g>
+</svg>

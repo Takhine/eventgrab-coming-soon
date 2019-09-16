@@ -87,7 +87,7 @@ function Admin(props) {
       setAuthToken(`Bearer ${token}`); 
       
     }).catch((err) => {
-      alert(1);  
+      alert('Error signing in');  
     })
   }
 

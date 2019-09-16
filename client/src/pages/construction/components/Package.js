@@ -64,18 +64,36 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 		}
 
 
-		handleDateChange(dates) {
+		// handleDateChange(dates) {
 
-			if(dates.length > 0){
-				const start = dates[0]
-				const end = dates[1]; 
+		// 	if(dates.length > 0){
+		// 		const start = dates[0]
+		// 		const end = dates[1]; 
 
+		// 		this.setState({
+		// 			startDate: start, 
+		// 			endDate: end
+		// 		})
+		// 	}
+
+		// }
+
+
+		handleStartDate(date) {
+			if(date){
 				this.setState({
-					startDate: start, 
-					endDate: end
+					startDate: date.format("YYYY-MM-DD") 
+				}) 
+			}
+		}
+
+
+		handelEndDate(date) {
+			if(date){ 
+				this.setState({
+					endDate: date.format("YYYY-MM-DD")
 				})
 			}
-
 		}
 
 		render() {
@@ -109,10 +127,21 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 						</Form.Item>
 						
 						<Form.Item label="Event Date">
-							<DatePicker.RangePicker 
+
+							<DatePicker 
+								allowClear	
 								disabledDate={this.disabledDate}
-								onChange={e => this.handleDateChange(e)}
-							 />
+								onChange={(date) => this.handleStartDate(date)}
+							/>
+						</Form.Item>
+
+
+						<Form.Item label="Event Date">
+							<DatePicker	
+								allowClear	
+								disabledDate={this.disabledDate}
+								onChange={(date) => this.handelEndDate(date)}
+							/>
 						</Form.Item>
 
 						<Form.Item label="Comments">
@@ -369,17 +398,7 @@ class Packages extends React.Component {
 								packageName={"college-package"}
 							/>
 						</TabPane>
-						<TabPane tab="Birthday" key="1">
-							<PackageType showModal={this.showModal} title={birthdayTitle} desc={birthdayDesc} imageLink={imageLink2} itemList={this.state.birthday_package}  packageData={this.state.birthPackData[0]}/>
-							<CollectionCreateForm
-								wrappedComponentRef={this.saveFormRef}
-								visible={this.state.visible}
-								onCancel={this.handleCancel}
-								onCreate={this.handleCreate}
-								title={birthdayTitle}
-								packageName={"birthday-package"}
-							/>
-						</TabPane>
+
 					</Tabs>
 				</div>
 
@@ -388,5 +407,18 @@ class Packages extends React.Component {
 	}
 	
 }
+
+// <TabPane tab="Birthday" key="1">
+// <PackageType showModal={this.showModal} title={birthdayTitle} desc={birthdayDesc} imageLink={imageLink2} itemList={this.state.birthday_package}  packageData={this.state.birthPackData[0]}/>
+// <CollectionCreateForm
+// 	wrappedComponentRef={this.saveFormRef}
+// 	visible={this.state.visible}
+// 	onCancel={this.handleCancel}
+// 	onCreate={this.handleCreate}
+// 	title={birthdayTitle}
+// 	packageName={"birthday-package"}
+// />
+// </TabPane>
+
 
 export default Packages;
