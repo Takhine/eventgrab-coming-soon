@@ -9,11 +9,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Header from './Slider.js';
 import Fade from 'react-fade-in';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import img from '../../../static/images/about-bg.svg';
 import { DatePicker } from 'antd';
 
 import axios from '../../../api/axios'; 
@@ -175,7 +173,7 @@ const customStyles = {
 }
 function Items(props) {
 	return (
-		<Row gutter={8} style={{ marginTop: '10px' }}>
+		<Row gutter={16} style={{ marginTop: '10px' }}>
 			{props.itemList.map(item => (
 				<Col
 					xs={24}
@@ -204,7 +202,7 @@ function Items(props) {
 									xs={12}
 									style={{ paddingRight: '10px', textAlign: 'center' }}
 								>
-									<h2 style={{ fontSize: '1.2rem' }}>{item.name}</h2>
+									<h2 style={{ fontSize: '1.2rem', paddingTop:'10pxx' }}>{item.name}</h2>
 								</Grid>
 							</Grid>
 						</CardContent>
@@ -226,7 +224,7 @@ function Services() {
 	return (
 		<div style={{ marginLeft: '30px' }}>
 			<div className="services-container" style={{ marginTop: '40px' }}>
-				<Fade delay={1000}>
+				<Fade delay={400}>
 					<Row>
 						<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
 							<img src={service} alt="Customer Care Person" />
@@ -236,7 +234,7 @@ function Services() {
 						</Col>
 					</Row>
 				</Fade>
-				<Fade delay={1200}>
+				<Fade delay={500}>
 					<Row style={{ marginTop: '40px' }}>
 						<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
 							<img src={delivery} alt="Delivery Truck" />
@@ -246,7 +244,7 @@ function Services() {
 						</Col>
 					</Row>
 				</Fade>
-				<Fade delay={1400}>
+				<Fade delay={600}>
 					<Row style={{ marginTop: '40px' }}>
 						<Col style={{ textAlign: 'center' }} xs={10} sm={6}>
 							<img src={quality} alt="5 Star Tool" />
@@ -263,18 +261,18 @@ function Services() {
 function PackageSummary(props) {
 	return (
 		<div className="package-big">
-			<Fade delay={1000}>
+			<Fade delay={500}>
 				<h1 className="package-header">{props.title}</h1>
 			</Fade>
-			<Fade delay={1000}>
+			<Fade delay={500}>
 				<p className="package-message">{props.desc}</p>
 			</Fade>
-			<Fade delay={1000}>
+			<Fade delay={500}>
 				<div className="package-button-row">
 					<Button className="package-call-button" onClick={props.showModal}>Send Quote</Button>
 				</div>
 			</Fade>
-			<Fade delay={1000}>
+			<Fade delay={500}>
 				<div className="package-details">
 					<Tabs defaultActiveKey="0">
 						<TabPane tab="Includes" key="0">
@@ -292,10 +290,10 @@ function PackageSummary(props) {
 function PackageType(props) {
 	return (
 		<div className="package-wrapper">
-			<Row gutter={8} style={{ marginRight: '0' }}>
+			<Row gutter={8}>
 				<Col xs={24} md={12} lg={10} className="package-details-wrapper">
 					<div>
-						<Fade delay={1000}>
+						<Fade delay={500}>
 							<div className="header-container">
 							<p>{JSON.stringify()}</p>
 								<Carousel className="custom-carousel" showArrows={false} showStatus={false} emulateTouch={false} showIndicators={false} axis="vertical">

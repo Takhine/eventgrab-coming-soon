@@ -8,7 +8,7 @@
 
 /*BASE STYLES*/
 html,body{
-  background-color: #f0f0f0;  
+  background-color: #fafafa;  
 }
 .container{
   margin: 25px 60px;
@@ -125,7 +125,7 @@ input:focus{
 }
 
 .gutter-row{
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 /*LANDSCAPE*/
 @media only screen and (orientation : landscape) and (max-width:768px) {
